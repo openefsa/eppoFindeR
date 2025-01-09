@@ -1,0 +1,85 @@
+---
+title: "eppoFindeR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{eppoFindeR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+library(eppoFindeR)
+```
+
+# Overview
+Welcome to the _eppoFindeR_ vignette! This package is a wrapper around the public APIs of the European and Mediterranean Plant Protection Organization (EPPO) database. It offers a convenient and efficient way to access a wide range of information on plant pests, diseases, and species using R, making it an invaluable tool for researchers and practitioners in plant protection.
+
+## Prerequisites
+To use the package, ensure you have a stable internet connection, as it will not work otherwise. The package communicates with the EPPO database online services to fetch and manipulate data, so a reliable connection is essential.
+
+## Installation
+You can install the eppoFindeR package from CRAN with the following command:
+
+```{r instCRAN}
+# install.packages("eppoFindeR")
+```
+
+Or, if you are installing from Azure DevOps:
+
+```{r instDevOps}
+# install.packages("devtools")
+# devtools::install_github("yourusername/eppoFindeR")
+```
+
+# Basic Usage
+The primary functionality of _eppoFindeR_ is to retrieve data about EPPO codes. Users have two main options: 1) only fetch data from a specific service, or 2) fetch all data from the database (i.e. query all available services).
+ 
+For example, to query the categorization service for the "BEMITA" EPPO code, you can use the queryTheEPPOForService() function.
+
+```{r queryServ}
+library(eppoFindeR)
+
+result <- queryTheEPPOForService("BEMITA", service = "categorization")
+print(result)
+```
+
+Alternatively, you can query the entire EPPO database, which means performing a search across all the available services. The result will be a list of data frames, each corresponding to a different service (e.g. pests, plants, diseases etc.). 
+ 
+```{r queryWhole}
+result_list <- queryTheWholeEPPO("BEMITA")
+
+# Print the names of the services in the result
+print(names(result_list))
+
+# Print the data from a specific service
+print(result_list$categorization)
+```
+
+The eppoFindeR package also includes a data wrangling function that helps combine the data fetched from the taxonomy and rank services, thus allowing for a more comprehensive and integrated data retrieval.
+
+Assume 'taxonomy' and 'kingdom' are two dataframes obtained from querying the corresponding EPPO services:
+
+```{r rankExample}
+taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
+kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
+
+# Wrangle data to combine taxonomy and rank
+wrangled_data <- taxonomyRanked(taxonomy, kingdom)
+print(wrangled_data)
+```
+
+The package also implements a data dump function that queries all the available EPPO services, given a vector of input EPPO codes. This ensures thorough data retrieval for multiple EPPO codes.
+
+```{r backUpExample}
+# Perform a backup search across all services for a pool of EPPO codes
+backup_result <- backUpEPPO(c("BEMITA", "LEUCSC"))
+print(backup_result)
+```
+
