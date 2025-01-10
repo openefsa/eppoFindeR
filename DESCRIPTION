@@ -15,10 +15,10 @@ Authors@R:
            comment = c(ORCID = "0009-0003-2990-7431")),
     person(given = "Rafael",
            family = "Vieira",
-           role = "aut"),
+           role = "ctb"),
     person(given = "Agata",
            family = "Kaczmarek",
-           role = "aut",
+           role = "ctb",
            comment = c(ORCID = "0000-0002-7463-5821")))
 Description: The eppoFindeR package provides a wrap around the European and 
     Mediterranean Plant Protection Organization (EPPO) database public APIs. 
@@ -56,6 +56,6 @@ VignetteBuilder: knitr
 Config/Needs/website: pkgdown
 Author: Luca Belmonte [aut, cre] (<https://orcid.org/0000-0002-7977-9170>),
   Dayana Stephanie Buzle [aut] (<https://orcid.org/0009-0003-2990-7431>),
-  Rafael Vieira [aut],
-  Agata Kaczmarek [aut] (<https://orcid.org/0000-0002-7463-5821>)
+  Rafael Vieira [ctb],
+  Agata Kaczmarek [ctb] (<https://orcid.org/0000-0002-7463-5821>)
 Repository: CRAN
