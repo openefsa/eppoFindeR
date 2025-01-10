@@ -3,7 +3,7 @@
 #' \code{apiQuery} queries the EPPO database via REST API to retrieve basic information, 
 #' all names, taxonomy, categorization, hosts, pests or kingdom data about an EPPO code.
 #' 
-#' @param queriedEppocode a single EPPO code.
+#' @param queriedEppocode character. A single EPPO code.
 #' 
 #' EPPO codes are computer codes developed for plants and pests (including pathogens) which are 
 #' important in agriculture and plant protection. EPPO codes constitute a harmonized coding 
@@ -14,7 +14,7 @@
 #' EPPO codes can be freely downloaded and incorporated into other IT systems via a dedicated 
 #' platform, the \href{https://data.eppo.int/}{EPPO Data Services}.
 #'
-#' @param queriedUrl the URL to query.
+#' @param queriedUrl character. The URL to query.
 #' 
 #' The URL is of the type: 
 #' https://data.eppo.int/api/rest/1.0/taxon/queriedEppocode?authtoken=xxxxxxxxxxxxxxxxxxx

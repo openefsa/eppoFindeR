@@ -4,7 +4,7 @@
 #' the required service, to retrieve basic information, all names, taxonomy, categorization, 
 #' hosts, pests or kingdom data about an EPPO code.
 #'
-#' @param queriedEppocode a single EPPO code.
+#' @param queriedEppocode character. A single EPPO code.
 #' 
 #' EPPO codes are computer codes developed for plants and pests (including pathogens) which are 
 #' important in agriculture and plant protection. EPPO codes constitute a harmonized coding system 
@@ -15,11 +15,11 @@
 #' downloaded and incorporated into other IT systems via a dedicated platform, 
 #' the \href{https://data.eppo.int/}{EPPO Data Services}.
 #' 
-#' @param baseUrl URL root for all REST API.
+#' @param baseUrl character. URL root for all REST API.
 #' 
 #' By default: https://data.eppo.int/api/rest/1.0
 #' 
-#' @param service a single service, to be selected among the following:
+#' @param service character. A single service, to be selected among the following:
 #' 
 #' \itemize{
 #'   \item {"": basic information}
@@ -33,7 +33,7 @@
 #' 
 #' By default: "categorization"
 #' 
-#' @param manually add your unique token, 
+#' @param token character. Manually add your unique token, 
 #' or set it inside .Renviron or using Sys.setenv(EPPO_token = "your-token").
 #' 
 #' By default: Sys.getenv('EPPO_token')

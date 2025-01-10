@@ -11,7 +11,7 @@ queryTheWholeEPPO(
 )
 }
 \arguments{
-\item{queriedEppocode}{a string, a single EPPO code.
+\item{queriedEppocode}{character. A single EPPO code.
 
 EPPO codes are computer codes developed for plants and pests (including pathogens) which are 
 important in agriculture and plant protection. EPPO codes constitute a harmonized coding system 
@@ -22,11 +22,11 @@ name of the organism. Each taxon is represented by a unique code. EPPO codes can
 downloaded and incorporated into other IT systems via a dedicated platform, 
 the \href{https://data.eppo.int/}{EPPO Data Services}.}
 
-\item{baseUrl}{a string, URL root for all REST API.
+\item{baseUrl}{character. URL root for all REST API.
 
 By default: https://data.eppo.int/api/rest/1.0}
 
-\item{token}{a string, manually add your unique,
+\item{token}{character. Manually add your unique token,
 or set it inside .Renviron or using Sys.setenv(EPPO_token = "your-token").
 
 By default: Sys.getenv('EPPO_token')

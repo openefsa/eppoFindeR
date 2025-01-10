@@ -5,7 +5,7 @@
 #'
 #' @param codesToScan a character vector of one or more EPPO code(s).
 #' 
-#' @param token manually add your unique token, 
+#' @param token character. Manually add your unique token, 
 #' or set it inside .Renviron or using Sys.setenv(EPPO_token = "your-token").
 #'
 #' @return A list of flattened dataframes is returned, each dataframe containing the contents 

@@ -7,7 +7,7 @@
 apiQuery(queriedEppocode, queriedUrl)
 }
 \arguments{
-\item{queriedEppocode}{a single EPPO code.
+\item{queriedEppocode}{character. A single EPPO code.
 
 EPPO codes are computer codes developed for plants and pests (including pathogens) which are 
 important in agriculture and plant protection. EPPO codes constitute a harmonized coding 
@@ -18,7 +18,7 @@ of the scientific name of the organism. Each taxon is represented by a unique co
 EPPO codes can be freely downloaded and incorporated into other IT systems via a dedicated 
 platform, the \href{https://data.eppo.int/}{EPPO Data Services}.}
 
-\item{queriedUrl}{the URL to query.
+\item{queriedUrl}{character. The URL to query.
 
 The URL is of the type: 
 https://data.eppo.int/api/rest/1.0/taxon/queriedEppocode?authtoken=xxxxxxxxxxxxxxxxxxx

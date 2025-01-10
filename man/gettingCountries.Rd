@@ -8,7 +8,7 @@ in the EPPO database}
 gettingCountries(acronym)
 }
 \arguments{
-\item{acronym}{the acronym of the Regional Plant Protection Organization.}
+\item{acronym}{character. The acronym of the Regional Plant Protection Organization.}
 }
 \value{
 A character vector containing all the member countries.

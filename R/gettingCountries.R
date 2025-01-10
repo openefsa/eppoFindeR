@@ -4,7 +4,7 @@
 #' \code{gettingCountries} returns the list of member countries for each Regional Plant Protection 
 #' Organization acronym which is used in the EPPO database (source: https://gd.eppo.int/rppo/).
 #'
-#' @param acronym the acronym of the Regional Plant Protection Organization.
+#' @param acronym character. The acronym of the Regional Plant Protection Organization.
 #' 
 #' @importFrom checkmate assert_character
 #'

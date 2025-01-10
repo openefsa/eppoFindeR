@@ -9,7 +9,7 @@ dataDump(codesToScan, token = Sys.getenv("EPPO_token"))
 \arguments{
 \item{codesToScan}{a character vector of one or more EPPO code(s).}
 
-\item{token}{manually add your unique token, 
+\item{token}{character. Manually add your unique token, 
 or set it inside .Renviron or using Sys.setenv(EPPO_token = "your-token").}
 }
 \value{

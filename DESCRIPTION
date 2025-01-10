@@ -1,7 +1,7 @@
 Package: eppoFindeR
 Type: Package
 Title: A Wrapper for EPPO Codes
-Version: 0.1.0.9000
+Version: 1.0.0
 Maintainer: Luca Belmonte <luca.belmonte@efsa.europa.eu>
 Authors@R: 
   c(person(given = "Luca",
@@ -43,10 +43,19 @@ Suggests:
     testthat (>= 3.2.1),
     usethis (>= 2.2.3),
     knitr (>= 1.0),
-    rmarkdown (>= 2.0)
-License: GPL-3 + file LICENSE
+    rmarkdown (>= 2.0),
+    covr (>= 3.6.4)
+License: GPL-3
+URL: https://github.com/openefsa/eppoFindeR
+BugReports: https://github.com/openefsa/eppoFindeR/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Config/Needs/website: pkgdown
+Author: Luca Belmonte [aut, cre] (<https://orcid.org/0000-0002-7977-9170>),
+  Dayana Stephanie Buzle [aut] (<https://orcid.org/0009-0003-2990-7431>),
+  Rafael Vieira [aut],
+  Agata Kaczmarek [aut] (<https://orcid.org/0000-0002-7463-5821>)
+Repository: CRAN
