@@ -38,7 +38,7 @@ Alternatively, if you want to install the package from GitHub (for the latest de
 ```{r instDevOps, eval=FALSE, echo=TRUE}
 # install.packages("devtools")
 
-devtools::install_github("yourusername/eppoFindeR")
+devtools::install_github("openefsa/eppoFindeR")
 ```
 
 ## Working with API Tokens
