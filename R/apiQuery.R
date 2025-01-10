@@ -64,8 +64,6 @@ apiQuery <- function(queriedEppocode, queriedUrl){
   assert_string(queriedEppocode)
   assert_string(queriedUrl)
   
-  print(queriedUrl)
-  
   df = tibble(empty=0)
   
   tryCatch(
