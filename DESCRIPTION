@@ -36,7 +36,8 @@ Imports:
     glue (>= 1.7.0),
     purrr (>= 1.0.2),
     magrittr (>= 2.0.3),
-    checkmate (>= 2.3.1)
+    checkmate (>= 2.3.1),
+    lifecycle (>= 1.0.4)
 Suggests:
     devtools (>= 2.4.5),
     roxygen2 (>= 7.3.1),
