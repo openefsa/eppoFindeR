@@ -1,3 +1,7 @@
+  <!-- badges: start -->
+  [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+  <!-- badges: end -->
+
 # Introduction 
 Welcome to the _eppoFindeR_ package! This package is a wrapper around the public APIs of the European and Mediterranean Plant Protection Organization (EPPO) database. It provides a straightforward way to access a wide range of pest-specific information that has been produced or collected by EPPO. 
 
