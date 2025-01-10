@@ -8,7 +8,7 @@ To use the _eppoFindeR_ package, you need a stable internet connection, as it in
 
 You can install the _eppoFindeR_ package from CRAN using the following command:
 
-```{r instCRAN, results='hide', message=FALSE, warning=FALSE}
+```
 install.packages("eppoFindeR")
 ```
 
