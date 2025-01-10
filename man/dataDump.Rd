@@ -9,19 +9,19 @@ dataDump(codesToScan, token = Sys.getenv("EPPO_token"))
 \arguments{
 \item{codesToScan}{a character vector of one or more EPPO code(s).}
 
-\item{token}{character. Manually add your unique token, 
+\item{token}{character. Manually add your unique token,
 or set it inside .Renviron or using Sys.setenv(EPPO_token = "your-token").}
 }
 \value{
-A list of flattened dataframes is returned, each dataframe containing the contents 
-of a request converted from JSON. Each output dataframe will contain basic information, 
-all names, taxonomy, categorization, hosts, pests and kingdom data about the input 
-EPPO code(s), respectively. The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl} 
-columns in the dataframe report the input EPPO code(s), the date when the query was performed, 
+A list of flattened dataframes is returned, each dataframe containing the contents
+of a request converted from JSON. Each output dataframe will contain basic information,
+all names, taxonomy, categorization, hosts, pests and kingdom data about the input
+EPPO code(s), respectively. The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl}
+columns in the dataframe report the input EPPO code(s), the date when the query was performed,
 and the queried URL, respectively.
 }
 \description{
-\code{dataDump} creates a dump of the whole EPPO database via REST API for one or more 
+\code{dataDump} creates a dump of the whole EPPO database via REST API for one or more
 EPPO code(s).
 }
 \examples{

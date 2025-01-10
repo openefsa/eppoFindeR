@@ -9,18 +9,18 @@ apiQuery(queriedEppocode, queriedUrl)
 \arguments{
 \item{queriedEppocode}{character. A single EPPO code.
 
-EPPO codes are computer codes developed for plants and pests (including pathogens) which are 
-important in agriculture and plant protection. EPPO codes constitute a harmonized coding 
-system which aims to facilitate the management of plant and pest names in computerized 
-databases, as well as data exchange between IT systems. EPPO codes are constructed with 
-combinations of 5 to 6 letters and, whenever possible, codes are mnemonic abbreviations 
-of the scientific name of the organism. Each taxon is represented by a unique code. 
-EPPO codes can be freely downloaded and incorporated into other IT systems via a dedicated 
+EPPO codes are computer codes developed for plants and pests (including pathogens) which are
+important in agriculture and plant protection. EPPO codes constitute a harmonized coding
+system which aims to facilitate the management of plant and pest names in computerized
+databases, as well as data exchange between IT systems. EPPO codes are constructed with
+combinations of 5 to 6 letters and, whenever possible, codes are mnemonic abbreviations
+of the scientific name of the organism. Each taxon is represented by a unique code.
+EPPO codes can be freely downloaded and incorporated into other IT systems via a dedicated
 platform, the \href{https://data.eppo.int/}{EPPO Data Services}.}
 
 \item{queriedUrl}{character. The URL to query.
 
-The URL is of the type: 
+The URL is of the type:
 https://data.eppo.int/api/rest/1.0/taxon/queriedEppocode?authtoken=xxxxxxxxxxxxxxxxxxx
 
 On each of your API requests:
@@ -30,15 +30,15 @@ On each of your API requests:
 }}
 }
 \value{
-A single flattened dataframe is returned, containing the contents of a request 
-converted from JSON. Based on the query, the output dataframe will contain basic information, 
+A single flattened dataframe is returned, containing the contents of a request
+converted from JSON. Based on the query, the output dataframe will contain basic information,
 all names, taxonomy, categorization, hosts, pests or kingdom data about the input EPPO code.
-The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl} columns in the dataframe 
-report the input EPPO code, the date when the query was performed, and the queried URL, 
+The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl} columns in the dataframe
+report the input EPPO code, the date when the query was performed, and the queried URL,
 respectively.
 }
 \description{
-\code{apiQuery} queries the EPPO database via REST API to retrieve basic information, 
+\code{apiQuery} queries the EPPO database via REST API to retrieve basic information,
 all names, taxonomy, categorization, hosts, pests or kingdom data about an EPPO code.
 }
 \examples{

@@ -2,7 +2,7 @@
 % Please edit documentation in R/gettingCountries.R
 \name{gettingCountries}
 \alias{gettingCountries}
-\title{Get member countries from the acronyms of all Regional Plant Protection Organizations used 
+\title{Get member countries from the acronyms of all Regional Plant Protection Organizations used
 in the EPPO database}
 \usage{
 gettingCountries(acronym)
@@ -14,7 +14,7 @@ gettingCountries(acronym)
 A character vector containing all the member countries.
 }
 \description{
-\code{gettingCountries} returns the list of member countries for each Regional Plant Protection 
+\code{gettingCountries} returns the list of member countries for each Regional Plant Protection
 Organization acronym which is used in the EPPO database (source: https://gd.eppo.int/rppo/).
 }
 \examples{

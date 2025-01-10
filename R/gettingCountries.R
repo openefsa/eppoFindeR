@@ -1,7 +1,7 @@
 #' Get member countries from the acronyms of all Regional Plant Protection Organizations used 
 #' in the EPPO database
 #'
-#' \code{gettingCountries} returns the list of member countries for each Regional Plant Protection 
+#' `gettingCountries` returns the list of member countries for each Regional Plant Protection 
 #' Organization acronym which is used in the EPPO database (source: https://gd.eppo.int/rppo/).
 #'
 #' @param acronym character. The acronym of the Regional Plant Protection Organization.

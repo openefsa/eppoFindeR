@@ -1,6 +1,6 @@
 #' Merge taxonomy and kingdom data into a single dataframe
 #' 
-#' \code{taxonomyRanked} merges taxonomy and kingdom information about the queried EPPO code 
+#' `taxonomyRanked` merges taxonomy and kingdom information about the queried EPPO code 
 #' into a single dataframe.
 #'
 #' @param taxonomy a dataframe containing taxonomy data about the queried EPPO code.

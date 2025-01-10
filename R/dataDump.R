@@ -1,6 +1,6 @@
 #' Create a dump of the whole EPPO database via REST API
 #' 
-#' \code{dataDump} creates a dump of the whole EPPO database via REST API for one or more 
+#' `dataDump` creates a dump of the whole EPPO database via REST API for one or more 
 #' EPPO code(s).
 #'
 #' @param codesToScan a character vector of one or more EPPO code(s).
@@ -11,7 +11,7 @@
 #' @return A list of flattened dataframes is returned, each dataframe containing the contents 
 #' of a request converted from JSON. Each output dataframe will contain basic information, 
 #' all names, taxonomy, categorization, hosts, pests and kingdom data about the input 
-#' EPPO code(s), respectively. The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl} 
+#' EPPO code(s), respectively. The `queriedEppocode`, `queriedOn` and `queriedUrl` 
 #' columns in the dataframe report the input EPPO code(s), the date when the query was performed, 
 #' and the queried URL, respectively.
 #' 

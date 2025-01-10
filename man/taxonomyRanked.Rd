@@ -15,7 +15,7 @@ taxonomyRanked(taxonomy, kingdom)
 A dataframe containing taxonomy and kingdom information about the queried EPPO code.
 }
 \description{
-\code{taxonomyRanked} merges taxonomy and kingdom information about the queried EPPO code 
+\code{taxonomyRanked} merges taxonomy and kingdom information about the queried EPPO code
 into a single dataframe.
 }
 \examples{

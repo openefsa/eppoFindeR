@@ -59,3 +59,4 @@ Author: Luca Belmonte [aut, cre] (<https://orcid.org/0000-0002-7977-9170>),
   Rafael Vieira [aut],
   Agata Kaczmarek [aut] (<https://orcid.org/0000-0002-7463-5821>)
 Repository: CRAN
+Roxygen: list(markdown = TRUE)

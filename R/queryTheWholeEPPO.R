@@ -1,6 +1,6 @@
 #' Query all services, a single service or multiple services in the EPPO database via REST API
 #'
-#' \code{queryTheWholeEPPO} queries the EPPO database via REST API by specifying the name(s) 
+#' `queryTheWholeEPPO` queries the EPPO database via REST API by specifying the name(s) 
 #' of the required service(s), to retrieve basic information, all names, taxonomy, categorization, 
 #' hosts, pests and kingdom data about an EPPO code.
 #'
@@ -13,7 +13,7 @@
 #' of 5 to 6 letters and, whenever possible, codes are mnemonic abbreviations of the scientific 
 #' name of the organism. Each taxon is represented by a unique code. EPPO codes can be freely 
 #' downloaded and incorporated into other IT systems via a dedicated platform, 
-#' the \href{https://data.eppo.int/}{EPPO Data Services}.
+#' the [EPPO Data Services](https://data.eppo.int/).
 #' 
 #' @param baseUrl character. URL root for all REST API.
 #' 
@@ -40,7 +40,7 @@
 #' @return A list of flattened dataframes is returned, each dataframe containing the contents 
 #' of a request converted from JSON. Based on the query, the output dataframe will contain basic 
 #' information, all names, taxonomy, categorization, hosts, pests or kingdom data about the input 
-#' EPPO code. The \code{queriedEppocode}, \code{queriedOn} and \code{queriedUrl} columns 
+#' EPPO code. The `queriedEppocode`, `queriedOn` and `queriedUrl` columns 
 #' in the dataframe report the input EPPO code, the date when the query was performed, 
 #' and the queried URL, respectively.
 #' 
