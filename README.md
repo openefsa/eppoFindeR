@@ -1,6 +1,6 @@
 # eppoFindeR <img src="man/figures/logo.png" height="200" align="right"/>
 
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![codecov](https://codecov.io/gh/openefsa/eppoFindeR/branch/main/graph/badge.svg)](https://codecov.io/gh/openefsa/eppoFindeR)
 
 # Introduction
 
