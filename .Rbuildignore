@@ -7,3 +7,15 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^\.travis\.yml$
+^README\.Rmd$
+^README\.md$
+^codecov\.yml$
+^cran-comments\.md$
+^travis-tool\.sh\.cmd$
+^\.github$
+^\.github\/$
+^.github$
+.github
+^CRAN-RELEASE$
+^LICENSE\.md$
