@@ -18,4 +18,12 @@ You can install the *eppoFindeR* package from CRAN using the following command:
 install.packages("eppoFindeR")
 ```
 
+Alternatively, if you want to install the package from GitHub (for the latest development version), use:
+
+```{r instDevOps, eval=FALSE, echo=TRUE}
+# install.packages("devtools")
+
+devtools::install_github("openefsa/eppoFindeR")
+```
+
 For a detailed guide and usage examples, please refer to the [full vignette](vignettes/eppoFindeR.Rmd).
