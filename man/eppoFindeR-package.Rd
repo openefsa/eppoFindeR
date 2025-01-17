@@ -24,7 +24,7 @@ Useful links:
 Authors:
 \itemize{
   \item Dayana Stephanie Buzle (\href{https://orcid.org/0009-0003-2990-7431}{ORCID})
-  \item Rafael Vieira
+  \item Rafael Vieira (\href{https://orcid.org/0009-0009-0289-5438}{ORCID})
   \item Agata Kaczmarek (\href{https://orcid.org/0000-0002-7463-5821}{ORCID})
 }
 
