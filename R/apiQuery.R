@@ -79,7 +79,8 @@ apiQuery <- function(queriedEppocode, queriedUrl){
       }
     },
     error = function(e){
-      print(e)
+      print("Error: wrong EPPO code/URL or SERVICE unavailable")
+      print(queriedUrl)
     },
     finally = {
       df = df %>% mutate(queriedEppocode = queriedEppocode
