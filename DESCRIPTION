@@ -47,7 +47,7 @@ Suggests:
     knitr (>= 1.0),
     rmarkdown (>= 2.0),
     covr (>= 3.6.4)
-License: GPL-3 + file LICENSE
+License: GPL-3
 URL: https://github.com/openefsa/eppoFindeR
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Encoding: UTF-8
