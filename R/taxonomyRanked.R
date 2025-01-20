@@ -19,12 +19,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Get taxonomy and kingdom data about Bemisia tabaci:
 #' taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
 #' kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
 #' 
 #' # Merge taxonomy and kingdom information about Bemisia tabaci into a single dataframe:
 #' taxonomyRanked(taxonomy, kingdom)
+#' }
 taxonomyRanked <- function(taxonomy, kingdom){
   
   assert_data_frame(taxonomy)

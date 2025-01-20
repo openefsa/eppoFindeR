@@ -19,10 +19,12 @@ A dataframe containing taxonomy and kingdom information about the queried EPPO c
 into a single dataframe.
 }
 \examples{
+\dontrun{
 # Get taxonomy and kingdom data about Bemisia tabaci:
 taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
 kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
 
 # Merge taxonomy and kingdom information about Bemisia tabaci into a single dataframe:
 taxonomyRanked(taxonomy, kingdom)
+}
 }

@@ -1,5 +1,7 @@
 test_that("the output is a dataframe", {
   
+  skip_if_not(nzchar(Sys.getenv('EPPO_token')), "API token not provided")
+  
   kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
   taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
   
