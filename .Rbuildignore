@@ -20,4 +20,3 @@
 .github
 ^CRAN-RELEASE$
 ^LICENSE\.md$
-^vignettes/eppoFindeR.Rmd$
