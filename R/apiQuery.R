@@ -79,8 +79,6 @@ apiQuery <- function(queriedEppocode, queriedUrl){
       }
     },
     error = function(e){
-      print("Error: wrong EPPO code/URL or SERVICE unavailable")
-      print(queriedUrl)
       print(e)
     },
     finally = {
