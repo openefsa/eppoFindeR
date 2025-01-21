@@ -7,7 +7,6 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
-^man/figures/
 ^\.travis\.yml$
 ^travis-tool\.sh\.cmd$
 ^README\.Rmd$

@@ -1,5 +1,5 @@
 ---
-title: "eppoFindeR"
+title: "Introduction to eppoFindeR"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{eppoFindeR}
