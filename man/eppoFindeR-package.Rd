@@ -4,11 +4,11 @@
 \name{eppoFindeR-package}
 \alias{eppoFindeR}
 \alias{eppoFindeR-package}
-\title{eppoFindeR: A Wrapper for EPPO Codes}
+\title{eppoFindeR: A Wrapper for 'EPPO' Codes}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-The eppoFindeR package provides a wrap around the European and Mediterranean Plant Protection Organization (EPPO) database public APIs. It enables users to retrieve EPPO-related data through searches across the entire EPPO database or by utilizing specific services, including categorization, taxonomy, and more. The package also includes a data wrangling function to integrate taxonomy and rank information, and a function that returns the list of member countries for each Regional Plant Protection Organization acronym which is used in the EPPO database.
+The 'eppoFindeR' package provides a wrap around the European and Mediterranean Plant Protection Organization ('EPPO') database public 'APIs'. It enables users to retrieve 'EPPO'-related data through searches across the entire 'EPPO' database or by utilizing specific services, including categorization, taxonomy, and more. The package also includes a data wrangling function to integrate taxonomy and rank information, and a function that returns the list of member countries for each Regional Plant Protection Organization acronym which is used in the 'EPPO' database.
 }
 \seealso{
 Useful links:

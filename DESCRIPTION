@@ -1,6 +1,6 @@
 Package: eppoFindeR
 Type: Package
-Title: A Wrapper for EPPO Codes
+Title: A Wrapper for 'EPPO' Codes
 Version: 1.0.0
 Maintainer: Luca Belmonte <luca.belmonte@efsa.europa.eu>
 Authors@R: 
@@ -21,14 +21,14 @@ Authors@R:
            family = "Kaczmarek",
            role = "aut",
            comment = c(ORCID = "0000-0002-7463-5821")))
-Description: The eppoFindeR package provides a wrap around the European and 
-    Mediterranean Plant Protection Organization (EPPO) database public APIs. 
-    It enables users to retrieve EPPO-related data through searches across 
-    the entire EPPO database or by utilizing specific services, including 
+Description: The 'eppoFindeR' package provides a wrap around the European and 
+    Mediterranean Plant Protection Organization ('EPPO') database public 'APIs'. 
+    It enables users to retrieve 'EPPO'-related data through searches across 
+    the entire 'EPPO' database or by utilizing specific services, including 
     categorization, taxonomy, and more. The package also includes a data 
     wrangling function to integrate taxonomy and rank information, and a
     function that returns the list of member countries for each Regional 
-    Plant Protection Organization acronym which is used in the EPPO database.
+    Plant Protection Organization acronym which is used in the 'EPPO' database.
 Imports:
     httr (>= 1.4.7),
     jsonlite (>= 1.8.8),
@@ -56,9 +56,5 @@ RoxygenNote: 7.3.2
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Config/Needs/website: pkgdown
-Author: Luca Belmonte [aut, cre] (<https://orcid.org/0000-0002-7977-9170>),
-  Dayana Stephanie Buzle [aut] (<https://orcid.org/0009-0003-2990-7431>),
-  Rafael Vieira [aut] (<https://orcid.org/0009-0009-0289-5438>),
-  Agata Kaczmarek [aut] (<https://orcid.org/0000-0002-7463-5821>)
 Repository: CRAN
 Roxygen: list(markdown = TRUE)
