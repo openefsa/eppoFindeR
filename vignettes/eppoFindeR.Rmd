@@ -1,0 +1,320 @@
+---
+title: "Introduction to eppoFindeR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{eppoFindeR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+library(eppoFindeR)
+```
+
+## Overview
+
+Welcome to the *eppoFindeR* package! This package is a wrapper around the public APIs of the European and Mediterranean Plant Protection Organization (EPPO) database. It provides a straightforward way to access a wide range of pest-specific information that has been produced or collected by EPPO.
+
+*eppoFindeR* is designed for use by researchers and practitioners working in plant protection who need easy access to the EPPO database using R.
+
+## Prerequisites
+
+To use the *eppoFindeR* package, you need a stable internet connection, as it interacts with the EPPO database online services to fetch and manipulate data. A reliable internet connection is essential for the functionality of the package.
+
+## Installation
+
+You can install the *eppoFindeR* package from CRAN using the following command:
+
+```{r instCRAN, eval=FALSE, echo=TRUE}
+install.packages("eppoFindeR")
+```
+
+Alternatively, if you want to install the package from GitHub (for the latest development version), use:
+
+```{r instDevOps, eval=FALSE, echo=TRUE}
+# install.packages("devtools")
+
+devtools::install_github("openefsa/eppoFindeR")
+```
+
+## Working with API Tokens
+
+The *eppoFindeR* package requires your unique token to be included in each API request for proper functionality. There are two ways to provide this token:
+
+1.  **Using the `.Renviron` file**\
+2.  **Manually adding it to each API request**
+
+### 1. Setting Environment Variables via `.Renviron`
+
+The `.Renviron` file is used to specify environment variables that R loads at the start of every session. It is particularly useful for setting variables, such as API keys, that can be accessed by R scripts and functions.
+
+The `.Renviron` file should be placed in your home directory (e.g., `C:/Users/username/Documents/.Renviron` on Windows or `~/.Renviron` on Unix-like systems). You can create or modify this file manually using any text editor.
+
+In the `.Renviron` file, you set environment variables in the following format:
+
+`EPPO_token=your-eppo-token`
+
+After adding your EPPO token to the `.Renviron` file, save and close the file. R will automatically read the token when it starts up, and you can access it in any R session using `Sys.getenv('EPPO_token')`.
+
+### 2. Manually adding your token to each API request
+
+For functions that require an API token, you can manually specify the token in the `token` argument of the function. This method is useful if you want to use different tokens for different function calls or if you don't want to store the token globally. For example:
+
+```{r tokenExample, eval=FALSE, echo=TRUE}
+queryTheEPPOForService("BEMITA", service = "general", token = "your-eppo-token")
+```
+
+#### Explanation:
+
+`queryTheEPPOForService(queriedEppocode = "BEMITA", service = "general", token = "your-eppo-token")`: This calls the function with the necessary parameters:
+
+-   `queriedEppocode = "BEMITA"`: The EPPO code for which you want to query a service.
+-   `service = "general"`: Specifies the service you want to query (you can replace this with any valid service type).
+-   `token = "your-eppo-token"`: Passes the token for authentication. Replace "your-eppo-token" with your actual EPPO token enclosed in quotes.
+
+## Basic Usage
+
+The primary functionality of *eppoFindeR* is to query the EPPO database for specific EPPO codes and retrieve data across various services. Users can either choose to: 1) query a single service for a given EPPO code or 2) query all available services in the database for more comprehensive information.
+
+For plant and pest species, the basic available information includes scientific names, synonyms, common names in different languages, and taxonomic position. For each pest of regulatory interest, more detailed information can also be retrieved regarding its host plants and categorization (quarantine status).
+
+The examples below will guide you on how to use the functions in this package to access these data, but to begin, we need to load the *eppoFindeR* package with this command:
+
+```{r loadLib, eval=FALSE, echo=TRUE}
+library(eppoFindeR)
+```
+
+If you want to learn more about the arguments and usage of a particular function, you can simply run:
+
+`help("function_name")`
+
+This will display the detailed documentation for the function, including its arguments, return values, and examples.
+
+For example, if you're working with a function called `queryTheEPPOForService()`, you would use:
+
+`help("queryTheEPPOForService")`
+
+## Querying a Specific Service
+
+To query a specific service (e.g., categorization) for an EPPO code (e.g., "BEMITA"), you can use the `queryTheEPPOForService()` function as follows:
+
+```{r queryServ, eval=FALSE, echo=TRUE}
+categorization_BEMITA <- queryTheEPPOForService("BEMITA", service = "categorization")
+```
+
+### Expected Output:
+
+```{r queryServOutput, eval=FALSE, echo=TRUE}
+categorization_BEMITA
+#> # A tibble: 20 × 11
+#>    nomcontinent isocode country        qlist qlistlabel   yr_add yr_del yr_trans
+#>    <chr>        <chr>   <chr>          <chr> <chr>         <int> <lgl>  <lgl>   
+#>  1 America      CL      Chile          1     A1 list        2019 NA     NA      
+#>  2 Asia         BH      Bahrain        2     A2 list        2003 NA     NA      
+#>  3 Asia         KZ      Kazakhstan     1     A1 list        2017 NA     NA      
+#>  4 Europe       AZ      Azerbaijan     1     A1 list        2007 NA     NA      
+#>  5 Europe       BY      Belarus        X     Quarantine …   1994 NA     NA      
+#>  6 Europe       GE      Georgia        1     A1 list        2018 NA     NA      
+#>  7 Europe       MD      Moldova        X     Quarantine …   2017 NA     NA      
+#>  8 Europe       NO      Norway         X     Quarantine …   2012 NA     NA      
+#>  9 Europe       RU      Russia         2     A2 list        2014 NA     NA      
+#> 10 Europe       RS      Serbia         1     A1 list        2015 NA     NA      
+#> 11 Europe       CH      Switzerland    1     A1 list        2019 NA     NA      
+#> 12 Europe       TR      Türkiye        2     A2 list        2016 NA     NA      
+#> 13 Europe       UA      Ukraine        1     A1 list        2019 NA     NA      
+#> 14 Europe       GB      United Kingdom 1     A1 list        2020 NA     NA      
+#> 15 Oceania      NZ      New Zealand    X     Quarantine …   2000 NA     NA      
+#> 16 RPPO/EU      9M      EAEU           2     A2 list        2016 NA     NA      
+#> 17 RPPO/EU      9A      EPPO           2     A2 list        1989 NA     NA      
+#> 18 RPPO/EU      9L      EU             P     PZ Quaranti…   2019 NA     NA      
+#> 19 RPPO/EU      9L      EU             N     A1 Quaranti…   2019 NA     NA      
+#> 20 RPPO/EU      9H      OIRSA          2     A2 list        1992 NA     NA      
+#> # ℹ 3 more variables: queriedEppocode <chr>, queriedOn <date>,
+#> #   queriedUrl <glue>
+```
+
+`categorization_BEMITA` is a dataframe containing information about the categorization of the EPPO code "BEMITA", and includes the following columns:
+
+-   **nomcontinent**: The continent where the country is located.
+-   **isocode**: The ISO country code.
+-   **country**: The name of the country or region.
+-   **qlist**: A code representing the pest status or classification.
+-   **qlistlabel**: A label explaining the pest classification (e.g., "A1 list" or "Quarantine pest").
+-   **yr_add**: The year the country was added to the list.
+-   **yr_del**: The year the country was removed (if applicable).
+-   **yr_trans**: The year the country transitioned (if applicable).
+-   **queriedEppocode**: The input EPPO code.
+-   **queriedOn**: The date when the query was performed.
+-   **queriedUrl**: The queried URL.
+
+## Querying All Available Services
+
+If you wish to query all available services for the EPPO code "BEMITA", you can use the `queryTheWholeEPPO()` function. This will return a list of dataframes, each corresponding to a different service.
+
+```{r queryWhole, eval=FALSE, echo=TRUE}
+result_list <- queryTheWholeEPPO("BEMITA")
+```
+
+### Expected Output:
+
+```{r queryWholeOutput, eval=FALSE, echo=TRUE}
+# Print the names of the services in the result
+names(result_list)
+#> [1] "general"        "names"          "taxonomy"       "categorization"
+#> [5] "hosts"          "pests"          "kingdom"
+
+# Print the data from a specific service, e.g., categorization
+result_list$categorization
+#> # A tibble: 20 × 11
+#>    nomcontinent isocode country        qlist qlistlabel   yr_add yr_del yr_trans
+#>    <chr>        <chr>   <chr>          <chr> <chr>         <int> <lgl>  <lgl>   
+#>  1 America      CL      Chile          1     A1 list        2019 NA     NA      
+#>  2 Asia         BH      Bahrain        2     A2 list        2003 NA     NA      
+#>  3 Asia         KZ      Kazakhstan     1     A1 list        2017 NA     NA      
+#>  4 Europe       AZ      Azerbaijan     1     A1 list        2007 NA     NA      
+#>  5 Europe       BY      Belarus        X     Quarantine …   1994 NA     NA      
+#>  6 Europe       GE      Georgia        1     A1 list        2018 NA     NA      
+#>  7 Europe       MD      Moldova        X     Quarantine …   2017 NA     NA      
+#>  8 Europe       NO      Norway         X     Quarantine …   2012 NA     NA      
+#>  9 Europe       RU      Russia         2     A2 list        2014 NA     NA      
+#> 10 Europe       RS      Serbia         1     A1 list        2015 NA     NA      
+#> 11 Europe       CH      Switzerland    1     A1 list        2019 NA     NA      
+#> 12 Europe       TR      Türkiye        2     A2 list        2016 NA     NA      
+#> 13 Europe       UA      Ukraine        1     A1 list        2019 NA     NA      
+#> 14 Europe       GB      United Kingdom 1     A1 list        2020 NA     NA      
+#> 15 Oceania      NZ      New Zealand    X     Quarantine …   2000 NA     NA      
+#> 16 RPPO/EU      9M      EAEU           2     A2 list        2016 NA     NA      
+#> 17 RPPO/EU      9A      EPPO           2     A2 list        1989 NA     NA      
+#> 18 RPPO/EU      9L      EU             P     PZ Quaranti…   2019 NA     NA      
+#> 19 RPPO/EU      9L      EU             N     A1 Quaranti…   2019 NA     NA      
+#> 20 RPPO/EU      9H      OIRSA          2     A2 list        1992 NA     NA      
+#> # ℹ 3 more variables: queriedEppocode <chr>, queriedOn <date>,
+#> #   queriedUrl <glue>
+```
+
+`names(result_list)` returns the names of the services: general, names, taxonomy, categorization, hosts, pests, and kingdom.
+
+Accessing a specific service (e.g., `result_list$categorization`) will show the data related to that particular service for the EPPO code "BEMITA".
+
+## Wrangling Data
+
+The *eppoFindeR* package also provides a data wrangling function, `taxonomyRanked()`, which can combine the data fetched from the "taxonomy" and "kingdom" EPPO services to create a unified, integrated dataframe.
+
+For example, assume you have two dataframes: `taxonomy` and `kingdom`, which were obtained by querying the "taxonomy" and "kingdom" services for the EPPO code "BEMITA" using the `queryTheEPPOForService()` function.
+
+You can combine these two dataframes as follows:
+
+```{r wrangleData, eval=FALSE, echo=TRUE}
+# Query the taxonomy service for the EPPO code "BEMITA"
+taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
+
+# Query the kingdom service for the EPPO code "BEMITA"
+kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
+
+# Combine taxonomy and kingdom data
+wrangled_data <- taxonomyRanked(taxonomy, kingdom)
+```
+
+### Expected Output:
+
+```{r wrangleDataOutput, eval=FALSE, echo=TRUE}
+wrangled_data
+#> # A tibble: 9 × 8
+#>   rank    codeid eppocode prefname   level queriedEppocode queriedOn  queriedUrl
+#>   <chr>    <int> <chr>    <chr>      <int> <chr>           <date>     <glue>    
+#> 1 kingdom  57021 1ANIMK   Animalia       1 BEMITA          2024-12-19 https://d…
+#> 2 <NA>     57200 1ARTHP   Arthropoda     2 BEMITA          2024-12-19 https://d…
+#> 3 <NA>     77963 1HEXAQ   Hexapoda       3 BEMITA          2024-12-19 https://d…
+#> 4 <NA>     59061 1INSEC   Insecta        4 BEMITA          2024-12-19 https://d…
+#> 5 <NA>     58830 1HEMIO   Hemiptera      5 BEMITA          2024-12-19 https://d…
+#> 6 <NA>     73260 1STERR   Sternorrh…     6 BEMITA          2024-12-19 https://d…
+#> 7 <NA>     56905 1ALEYF   Aleyrodid…     7 BEMITA          2024-12-19 https://d…
+#> 8 <NA>     57321 1BEMIG   Bemisia        8 BEMITA          2024-12-19 https://d…
+#> 9 <NA>      5935 BEMITA   Bemisia t…     9 BEMITA          2024-12-19 https://d…
+```
+
+`wrangled_data` is a dataframe that combines the taxonomy and kingdom information for the EPPO code "BEMITA". This integration provides a more comprehensive view of the organism's taxonomic rank.
+
+Specifically, the output dataframe contains the following columns:
+
+-   **rank**: The taxonomic rank.
+-   **codeid**: A unique identifier for each entry.
+-   **eppocode**: The EPPO code representing the taxonomic group.
+-   **prefname**: The preferred name of the taxonomic group (e.g., "Animalia", "Insecta").
+-   **level**: The taxonomic level in the hierarchy (1 for the broadest category, progressing to more specific levels).
+-   **queriedEppocode**: The input EPPO code.
+-   **queriedOn**: The date when the query was performed.
+-   **queriedUrl**: The queried URL.
+
+## Retrieving Countries in Regional Plant Protection Organizations
+
+The `gettingCountries()` function allows you to retrieve all the member countries of a specific Regional Plant Protection Organization (RPPO).
+
+For example, to get the member countries of the EAEU (Eurasian Economic Union), you can use the following command:
+
+```{r gettingCountries, eval=FALSE, echo=TRUE}
+EAEU_countries <- gettingCountries('EAEU')
+```
+
+### Expected Output:
+
+```{r gettingCountriesOutput, eval=FALSE, echo=TRUE}
+EAEU_countries
+#> [1] "Armenia,Belarus,Kazakhstan,Kyrgyzstan,Russia"
+```
+
+`EAEU_countries` is a vector of country names that are members of the EAEU.
+
+## Data Dump for Multiple EPPO Codes
+
+The `dataDump()` function allows you to retrieve a comprehensive data dump for multiple EPPO codes. This function queries all available EPPO services for a list of input codes.
+
+The following is an example of how the function can be used to query all available EPPO services for the EPPO codes "APHIPO" and "LEUCSC":
+
+```{r dataDump, eval=FALSE, echo=TRUE}
+data_dump <- dataDump(c("APHIPO", "LEUCSC"))
+```
+
+### Expected Output:
+
+```{r dataDumpOutput, eval=FALSE, echo=TRUE}
+# Print the names of the services in the result
+names(data_dump)
+#> [1] "general"        "names"          "taxonomy"       "categorization"
+#> [5] "hosts"          "pests"          "kingdom"
+
+# Print the data from a specific service, e.g., general
+data_dump$general
+#> # A tibble: 16 × 11
+#>    pestCode codeid eppocode status c_date         m_date prefname attached_infos
+#>    <chr>     <int> <chr>    <chr>  <chr>          <chr>  <chr>    <named list>  
+#>  1 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  2 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  3 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  4 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  5 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  6 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  7 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  8 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… <int [1]>     
+#>  9 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 10 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 11 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 12 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 13 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 14 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 15 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> 16 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… <int [1]>     
+#> # ℹ 3 more variables: queriedEppocode <chr>, queriedOn <date>,
+#> #   queriedUrl <glue>
+```
+
+The output is a list of dataframes, each corresponding to a different service: general, names, taxonomy, categorization, hosts, pests, and kingdom.
+
+Accessing a specific service (e.g., `data_dump$general`) will show the data related to that particular service for the EPPO codes "APHIPO" and "LEUCSC". The column `queriedEppocode` in the dataframe distinguishes which data have been retrieved for each EPPO code.
