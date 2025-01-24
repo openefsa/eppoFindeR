@@ -14,6 +14,7 @@ The 'eppoFindeR' package provides a wrap around the European and Mediterranean P
 Useful links:
 \itemize{
   \item \url{https://github.com/openefsa/eppoFindeR}
+  \item \url{https://openefsa.github.io/eppoFindeR/}
   \item Report bugs at \url{https://github.com/openefsa/eppoFindeR/issues}
 }
 

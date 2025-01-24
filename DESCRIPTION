@@ -30,7 +30,7 @@ Description: The 'eppoFindeR' package provides a wrap around the European and
     function that returns the list of member countries for each Regional 
     Plant Protection Organization acronym which is used in the 'EPPO' database.
 License: GPL-3
-URL: https://github.com/openefsa/eppoFindeR
+URL: https://github.com/openefsa/eppoFindeR, https://openefsa.github.io/eppoFindeR/
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Depends:
     R (>= 4.0.0)
