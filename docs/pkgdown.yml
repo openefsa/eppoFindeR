@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   eppoFindeR: eppoFindeR.html
-last_built: 2025-01-24T13:14Z
+last_built: 2025-01-24T13:50Z
 urls:
   reference: https://openefsa.github.io/eppoFindeR/reference
   article: https://openefsa.github.io/eppoFindeR/articles
