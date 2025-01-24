@@ -72,12 +72,9 @@ apiQuery <- function(queriedEppocode, queriedUrl){
         content(as = "text", encoding = "UTF-8") %>% 
         fromJSON(flatten = TRUE) %>% 
         bind_rows()
-      if (length(df_json) == 0){
-        df = bind_rows(df, df_json);stop()
-      } else {
-        df = bind_cols(df, df_json)
-      }
-    },
+    if (length(df_json) > 0){
+      df = bind_cols(df, df_json)}
+      },
     error = function(e){
       print(e)
     },
