@@ -49,8 +49,8 @@
 #' 
 #' # Get taxonomy data about Bemisia tabaci:
 #' queriedEppocode <- "BEMITA"
-#' queriedUrl 
-#' <- "https://data.eppo.int/api/rest/1.0/taxon/BEMITA/taxonomy?authtoken=xxxxxxxxxxxxxxxxxxx"
+#' queriedUrl <- 
+#' "https://data.eppo.int/api/rest/1.0/taxon/BEMITA/taxonomy?authtoken=xxxxxxxxxxxxxxxxxxx"
 #' apiQuery(queriedEppocode, queriedUrl)
 #' 
 #' # Get all names about Aphis pomi:
