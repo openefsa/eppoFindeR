@@ -21,8 +21,8 @@ Authors@R:
            family = "Kaczmarek",
            role = "aut",
            comment = c(ORCID = "0000-0002-7463-5821")))
-Description: The 'eppoFindeR' package provides a wrap around the European and 
-    Mediterranean Plant Protection Organization ('EPPO') database public 'APIs'. 
+Description: A wrapper around the European and Mediterranean Plant Protection 
+    Organization ('EPPO') database public 'APIs' at <https://data.eppo.int/>. 
     It enables users to retrieve 'EPPO'-related data through searches across 
     the entire 'EPPO' database or by utilizing specific services, including 
     categorization, taxonomy, and more. The package also includes a data 
