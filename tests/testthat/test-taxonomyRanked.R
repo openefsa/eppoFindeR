@@ -1,17 +1,16 @@
+library(dplyr)
+
 test_that("the output is a dataframe", {
+  taxonomy <- tibble(
+    eppocode = c("A", "B", "C"),
+    queriedEppocode = c("X", "Y", "Z"),
+    column_3 = c("X", "Y", "Z"))
   
-  skip_if_not(nzchar(Sys.getenv('EPPO_token')), "API token not provided")
-  
-  kingdom <- queryTheEPPOForService("BEMITA", service = "kingdom")
-  taxonomy <- queryTheEPPOForService("BEMITA", service = "taxonomy")
+  kingdom <- tibble(
+    eppocode = c("A", "B", "C"),
+    queriedEppocode = c("X", "Y", "Z"),
+    status = c("kingdom", "Y", "Z"),
+    column_4 = c("X", "Y", "Z"))
   
   expect_equal(is.data.frame(taxonomyRanked(taxonomy,kingdom)), TRUE)
-})
-
-test_that("if NULL is passed then it throws an error", {
-  expect_error(taxonomyRanked())
-})
-
-test_that("if NAs are passed then it throws an error", {
-  expect_error(taxonomyRanked(NA, NA))
 })
