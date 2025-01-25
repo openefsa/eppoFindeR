@@ -29,6 +29,7 @@ jobs:
           rversions
           urlchecker
           devtools
+          magrittr
 
     - name: Install covr and other dependencies
       run: |
@@ -37,6 +38,7 @@ jobs:
     - name: Run tests and generate coverage report
       run: |
         Rscript -e "library(covr)"
+        Rscript -e "library(magrittr)"
         Rscript -e "covr::package_coverage() %>% covr::report()"
 
     - name: Upload coverage to Codecov
