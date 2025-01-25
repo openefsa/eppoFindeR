@@ -23,13 +23,7 @@ jobs:
       uses: r-lib/actions/setup-r-dependencies@v2
       with:
         extra-packages: |
-          usethis
-          pkgdown
-          rcmdcheck
-          rversions
-          urlchecker
           devtools
-          magrittr
 
     - name: Install covr and other dependencies
       run: |
@@ -38,8 +32,8 @@ jobs:
     - name: Run tests and generate coverage report
       run: |
         Rscript -e "library(covr)"
-        Rscript -e "library(magrittr)"
-        Rscript -e "covr::package_coverage() %>% covr::report()"
+        Rscript -e "covr::package_coverage()"
+        Rscript -e "covr::report()"
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
