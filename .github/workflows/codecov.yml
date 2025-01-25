@@ -33,7 +33,7 @@ jobs:
       run: |
         Rscript -e "library(covr)"
         Rscript -e "covr::package_coverage()"
-        Rscript -e "covr::codecov()"
+        Rscript -e "covr::codecov(token = Sys.getenv('CODECOV_TOKEN'))"
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
