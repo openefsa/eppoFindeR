@@ -3,7 +3,7 @@ name: Build pkgdown site
 on:
   push:
     branches:
-      - dev  # Trigger on push to the dev branch (for any push to dev, including commit, merge, etc.)
+      - dev  # Trigger on push to the dev branch (commit, merge, etc.)
 
 jobs:
   pkgdown:
