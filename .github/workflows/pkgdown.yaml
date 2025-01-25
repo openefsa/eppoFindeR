@@ -32,13 +32,3 @@ jobs:
           clean: false
           branch: gh-pages
           folder: docs
-
-      # Optional: Trigger a GitHub Pages refresh (source is set to the gh-pages branch, /root folder)
-      - name: Trigger GitHub Pages refresh
-        run: |
-          git fetch origin gh-pages
-          git checkout gh-pages
-          git pull origin gh-pages
-          git add -A
-          git commit -m "Trigger GitHub Pages update"
-          git push origin gh-pages
