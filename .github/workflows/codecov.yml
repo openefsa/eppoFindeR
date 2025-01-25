@@ -21,6 +21,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker'))"
         Rscript -e "install.packages('devtools')"
         Rscript -e "devtools::install_deps()"
 
@@ -39,3 +40,4 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: coverage.xml
         name: codecov-coverage-report
+
