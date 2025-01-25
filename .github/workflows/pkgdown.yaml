@@ -6,28 +6,29 @@ on:
       - dev  # Trigger on push to the dev branch (for any push to dev, including commit, merge, etc.)
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Use an Ubuntu runner
-
+  pkgdown:
+    runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.0'  # Specify your R version (you can adjust this version as needed)
+          use-public-rspm: true
 
-      - name: Install dependencies
-        run: remotes::install_deps()  # Install any additional dependencies your package needs
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::pkgdown, local::.
+          needs: website
 
-      - name: Build pkgdown site
-        run: |
-          library(pkgdown)
-          pkgdown::build_site_github_pages()
+      - name: Build site
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        shell: Rscript {0}
 
       - name: Deploy pkgdown site to dev branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          publish_dir: ./docs  # Directory where the site is built (it will be in 'docs' by default)
-          publish_branch: dev  # Deploy to the dev branch
+          clean: false
+          branch: dev
+          folder: docs
