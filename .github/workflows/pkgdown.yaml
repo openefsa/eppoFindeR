@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - dev  # Trigger on push to the dev branch (commit, merge, etc.)
+  pull_request:
+    branches:
+      - dev
 
 jobs:
   pkgdown:
