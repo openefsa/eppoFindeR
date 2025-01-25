@@ -19,9 +19,7 @@ jobs:
           r-version: '4.0'  # Specify your R version (you can adjust this version as needed)
 
       - name: Install dependencies
-        run: |
-          install.packages("pkgdown")
-          remotes::install_deps()  # Install any additional dependencies your package needs
+        run: remotes::install_deps()  # Install any additional dependencies your package needs
 
       - name: Build pkgdown site
         run: |
