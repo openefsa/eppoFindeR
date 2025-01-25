@@ -30,6 +30,8 @@ jobs:
         Rscript -e "install.packages('covr')"
 
     - name: Run tests and generate coverage report
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}  # Expose the token to the R environment
       run: |
         Rscript -e "library(covr)"
         Rscript -e "covr::package_coverage()"
