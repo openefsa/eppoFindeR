@@ -21,19 +21,18 @@ jobs:
 
     - name: Install dependencies
       run: |
-        install.packages("devtools")
-        devtools::install_deps()
+        Rscript -e "install.packages('devtools')"
+        Rscript -e "devtools::install_deps()"
 
     - name: Install covr and other dependencies
       run: |
-        install.packages("covr")
-    
+        Rscript -e "install.packages('covr')"
+
     - name: Run tests and generate coverage report
       run: |
-        library(covr)
-        covr::package_coverage() %>%
-          covr::report()
-    
+        Rscript -e "library(covr)"
+        Rscript -e "covr::package_coverage() %>% covr::report()"
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
