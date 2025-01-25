@@ -1,0 +1,42 @@
+name: R Package CI workflow that runs tests, checks coverage, and updates the Codecov badge
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+
+    - name: Install dependencies
+      run: |
+        install.packages("devtools")
+        devtools::install_deps()
+
+    - name: Install covr and other dependencies
+      run: |
+        install.packages("covr")
+    
+    - name: Run tests and generate coverage report
+      run: |
+        library(covr)
+        covr::package_coverage() %>%
+          covr::report()
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: coverage.xml
+        name: codecov-coverage-report
