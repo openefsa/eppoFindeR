@@ -49,8 +49,8 @@
 #' 
 #' # Get taxonomy data about Bemisia tabaci:
 #' queriedEppocode <- "BEMITA"
-#' queriedUrl 
-#' <- "https://data.eppo.int/api/rest/1.0/taxon/BEMITA/taxonomy?authtoken=xxxxxxxxxxxxxxxxxxx"
+#' queriedUrl <- 
+#' "https://data.eppo.int/api/rest/1.0/taxon/BEMITA/taxonomy?authtoken=xxxxxxxxxxxxxxxxxxx"
 #' apiQuery(queriedEppocode, queriedUrl)
 #' 
 #' # Get all names about Aphis pomi:
@@ -72,12 +72,9 @@ apiQuery <- function(queriedEppocode, queriedUrl){
         content(as = "text", encoding = "UTF-8") %>% 
         fromJSON(flatten = TRUE) %>% 
         bind_rows()
-      if (length(df_json) == 0){
-        df = bind_rows(df, df_json);stop()
-      } else {
-        df = bind_cols(df, df_json)
-      }
-    },
+    if (length(df_json) > 0){
+      df = bind_cols(df, df_json)}
+      },
     error = function(e){
       print(e)
     },
