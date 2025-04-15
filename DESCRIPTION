@@ -29,7 +29,7 @@ Description: A wrapper around the European and Mediterranean Plant Protection
     wrangling function to integrate taxonomy and rank information, and a
     function that returns the list of member countries for each Regional 
     Plant Protection Organization acronym which is used in the 'EPPO' database.
-License: GPL-3
+License: EUPL
 URL: https://github.com/openefsa/eppoFindeR, https://openefsa.github.io/eppoFindeR/
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Depends:
