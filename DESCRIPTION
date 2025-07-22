@@ -29,14 +29,14 @@ Description: A wrapper around the European and Mediterranean Plant Protection
     wrangling function to integrate taxonomy and rank information, and a
     function that returns the list of member countries for each Regional 
     Plant Protection Organization acronym which is used in the 'EPPO' database.
-License: GPL-3
+License: EUPL (>= 1.2)
 URL: https://github.com/openefsa/eppoFindeR, https://openefsa.github.io/eppoFindeR/
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Depends:
     R (>= 4.0.0)
 Imports:
     httr (>= 1.4.7),
-    jsonlite (>= 1.8.8),
+    jsonlite (>= 1.8.7),
     tidyr (>= 1.3.1),
     dplyr (>= 1.1.4),
     glue (>= 1.7.0),
@@ -46,8 +46,8 @@ Imports:
     lifecycle (>= 1.0.4)
 Suggests:
     devtools (>= 2.4.5),
-    roxygen2 (>= 7.3.1),
-    testthat (>= 3.2.1),
+    roxygen2 (>= 7.2.1),
+    testthat (>= 3.0.0),
     usethis (>= 2.2.3),
     knitr (>= 1.0),
     rmarkdown (>= 2.0),
@@ -60,3 +60,4 @@ VignetteBuilder: knitr
 Config/Needs/website: pkgdown
 Repository: CRAN
 Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.0.0)
