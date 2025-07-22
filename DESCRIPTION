@@ -60,4 +60,3 @@ VignetteBuilder: knitr
 Config/Needs/website: pkgdown
 Repository: CRAN
 Roxygen: list(markdown = TRUE)
-Depends: R (>= 4.0.0)
