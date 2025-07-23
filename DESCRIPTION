@@ -1,7 +1,7 @@
 Package: eppoFindeR
 Type: Package
 Title: A Wrapper for 'EPPO' Codes
-Version: 1.0.0
+Version: 1.0.0.9000
 Maintainer: Luca Belmonte <luca.belmonte@efsa.europa.eu>
 Authors@R: 
   c(person(given = "Luca",
