@@ -1,4 +1,8 @@
-url: https://openefsa.github.io/eppoFindeR/
 template:
   bootstrap: 5
 
+development:
+  mode: auto
+  
+url: https://openefsa.github.io/eppoFindeR
+destination: docs
