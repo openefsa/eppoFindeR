@@ -5,18 +5,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Introduction to eppoFindeR • eppoFindeR</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
+<title>eppoFindeR • eppoFindeR</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to eppoFindeR">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="eppoFindeR">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -26,7 +25,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">eppoFindeR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">2.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +54,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Introduction to eppoFindeR</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>eppoFindeR</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/openefsa/eppoFindeR/blob/HEAD/vignettes/eppoFindeR.Rmd" class="external-link"><code>vignettes/eppoFindeR.Rmd</code></a></small>
@@ -64,393 +63,282 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/openefsa/eppoFindeR" class="external-link">eppoFindeR</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>Welcome to the <em>eppoFindeR</em> package! This package is a wrapper
-around the public APIs of the European and Mediterranean Plant
-Protection Organization (EPPO) database. It provides a straightforward
-way to access a wide range of pest-specific information that has been
-produced or collected by EPPO.</p>
-<p><em>eppoFindeR</em> is designed for use by researchers and
-practitioners working in plant protection who need easy access to the
-EPPO database using R.</p>
-</div>
-<div class="section level2">
-<h2 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
-</h2>
-<p>To use the <em>eppoFindeR</em> package, you need a stable internet
-connection, as it interacts with the EPPO database online services to
-fetch and manipulate data. A reliable internet connection is essential
-for the functionality of the package.</p>
+<p><strong>eppoFindeR</strong> provides an R interface to the public
+APIs of the <strong>European and Mediterranean Plant Protection
+Organization (EPPO)</strong> database. The package facilitates access to
+a wide range of pest-related information collected and maintained by
+EPPO, allowing users to query, retrieve, and process this data directly
+from R.</p>
+<p>The package is intended for researchers, analysts, and practitioners
+in plant protection who require convenient programmatic access to EPPO
+data.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the <em>eppoFindeR</em> package from CRAN using the
-following command:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="section level3">
+<h3 id="from-cran">From CRAN<a class="anchor" aria-label="anchor" href="#from-cran"></a>
+</h3>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"eppoFindeR"</span><span class="op">)</span></span></code></pre></div>
-<p>Alternatively, if you want to install the package from GitHub (for
-the latest development version), use:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+</div>
+<div class="section level3">
+<h3 id="development-version-from-github">Development version (from GitHub)<a class="anchor" aria-label="anchor" href="#development-version-from-github"></a>
+</h3>
+<p>To install the latest development version:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"openefsa/eppoFindeR"</span><span class="op">)</span></span></code></pre></div>
 </div>
+</div>
 <div class="section level2">
-<h2 id="working-with-api-tokens">Working with API Tokens<a class="anchor" aria-label="anchor" href="#working-with-api-tokens"></a>
+<h2 id="requirements">Requirements<a class="anchor" aria-label="anchor" href="#requirements"></a>
 </h2>
-<p>The <em>eppoFindeR</em> package requires your unique token to be
-included in each API request for proper functionality. There are two
-ways to provide this token:</p>
+<p>An active internet connection is required, as the package
+communicates with EPPO’s online services to fetch and process data.</p>
+</div>
+<div class="section level2">
+<h2 id="working-with-api-keys">Working with API keys<a class="anchor" aria-label="anchor" href="#working-with-api-keys"></a>
+</h2>
+<p>The <em>eppoFindeR</em> package requires your unique API token to
+function properly. You can provide this token in one of two ways:</p>
 <ol style="list-style-type: decimal">
-<li>
-<strong>Using the <code>.Renviron</code> file</strong><br>
+<li>By setting it in the <code>.Renviron</code> file.<br>
 </li>
-<li><strong>Manually adding it to each API request</strong></li>
+<li>By including it manually in each API request.</li>
 </ol>
 <div class="section level3">
-<h3 id="setting-environment-variables-via--renviron">1. Setting Environment Variables via <code>.Renviron</code><a class="anchor" aria-label="anchor" href="#setting-environment-variables-via--renviron"></a>
+<h3 id="setting-the-api-key-via--renviron">Setting the API key via <code>.Renviron</code><a class="anchor" aria-label="anchor" href="#setting-the-api-key-via--renviron"></a>
 </h3>
-<p>The <code>.Renviron</code> file is used to specify environment
-variables that R loads at the start of every session. It is particularly
-useful for setting variables, such as API keys, that can be accessed by
-R scripts and functions.</p>
-<p>The <code>.Renviron</code> file should be placed in your home
-directory (e.g., <code>C:/Users/username/Documents/.Renviron</code> on
-Windows or <code>~/.Renviron</code> on Unix-like systems). You can
-create or modify this file manually using any text editor.</p>
-<p>In the <code>.Renviron</code> file, you set environment variables in
-the following format:</p>
-<p><code>EPPO_token=your-eppo-token</code></p>
-<p>After adding your EPPO token to the <code>.Renviron</code> file, save
-and close the file. R will automatically read the token when it starts
-up, and you can access it in any R session using
-<code>Sys.getenv('EPPO_token')</code>.</p>
+<p>The <code>.Renviron</code> file is used to define environment
+variables that R loads automatically at the start of each session. This
+approach is particularly convenient for sensitive information like API
+keys, as it allows you to use them in any R script or function without
+hardcoding them.</p>
+<p>Place the <code>.Renviron</code> file in your home directory (for
+example, <code>C:/Users/username/Documents/.Renviron</code> on Windows
+or <code>~/.Renviron</code> on Unix-like systems). You can create or
+edit this file with any plain text editor.</p>
+<p>Add your EPPO API key in the following format:</p>
+<p><code>EPPO_API_KEY=&lt;your_eppo_api_key&gt;</code></p>
+<p>After saving the file, R will automatically read the token on
+startup.</p>
 </div>
 <div class="section level3">
-<h3 id="manually-adding-your-token-to-each-api-request">2. Manually adding your token to each API request<a class="anchor" aria-label="anchor" href="#manually-adding-your-token-to-each-api-request"></a>
+<h3 id="setting-the-api-key-manually-for-each-request">Setting the API key manually for each request<a class="anchor" aria-label="anchor" href="#setting-the-api-key-manually-for-each-request"></a>
 </h3>
-<p>For functions that require an API token, you can manually specify the
-token in the <code>token</code> argument of the function. This method is
-useful if you want to use different tokens for different function calls
-or if you don’t want to store the token globally. For example:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService</a></span><span class="op">(</span><span class="st">"BEMITA"</span>, service <span class="op">=</span> <span class="st">"general"</span>, token <span class="op">=</span> <span class="st">"your-eppo-token"</span><span class="op">)</span></span></code></pre></div>
-<div class="section level4">
-<h4 id="explanation">Explanation:<a class="anchor" aria-label="anchor" href="#explanation"></a>
-</h4>
-<p><code>queryTheEPPOForService(queriedEppocode = "BEMITA", service = "general", token = "your-eppo-token")</code>:
-This calls the function with the necessary parameters:</p>
-<ul>
-<li>
-<code>queriedEppocode = "BEMITA"</code>: The EPPO code for which you
-want to query a service.</li>
-<li>
-<code>service = "general"</code>: Specifies the service you want to
-query (you can replace this with any valid service type).</li>
-<li>
-<code>token = "your-eppo-token"</code>: Passes the token for
-authentication. Replace “your-eppo-token” with your actual EPPO token
-enclosed in quotes.</li>
-</ul>
-</div>
+<p>Alternatively, you can provide the API key directly in the
+<code>apiKey</code> argument of functions that require it. This is
+useful if you want to use different tokens for different calls, or if
+you prefer not to store the token globally. For example:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span>, apiKey <span class="op">=</span> <span class="st">"&lt;your_eppo_api_key&gt;"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
-<h2 id="basic-usage">Basic Usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
+<h2 id="basic-usage">Basic usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
 </h2>
-<p>The primary functionality of <em>eppoFindeR</em> is to query the EPPO
-database for specific EPPO codes and retrieve data across various
-services. Users can either choose to: 1) query a single service for a
-given EPPO code or 2) query all available services in the database for
-more comprehensive information.</p>
-<p>For plant and pest species, the basic available information includes
+<p>The main purpose of <em>eppoFindeR</em> is to query the EPPO database
+for specific EPPO codes and retrieve relevant information across various
+endpoints. For each endpoint, you can either:</p>
+<ol style="list-style-type: decimal">
+<li>Query all available services to obtain more comprehensive
+data.<br>
+</li>
+<li>Query one or more services to obtain specific data.</li>
+</ol>
+<p>For plant and pest species, the basic information returned includes
 scientific names, synonyms, common names in different languages, and
-taxonomic position. For each pest of regulatory interest, more detailed
-information can also be retrieved regarding its host plants and
-categorization (quarantine status).</p>
-<p>The examples below will guide you on how to use the functions in this
-package to access these data, but to begin, we need to load the
-<em>eppoFindeR</em> package with this command:</p>
+taxonomic classification. For pests of regulatory interest, you can also
+retrieve more detailed information, such as host plants and quarantine
+categorization.</p>
+<p>Below are examples demonstrating how to use the functions in this
+package. First, load the <em>eppoFindeR</em> package:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://openefsa.github.io/eppoFindeR">eppoFindeR</a></span><span class="op">)</span></span></code></pre></div>
+<p>To explore the arguments and usage of a specific function, you can
+run:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/openefsa/eppoFindeR" class="external-link">eppoFindeR</a></span><span class="op">)</span></span></code></pre></div>
-<p>If you want to learn more about the arguments and usage of a
-particular function, you can simply run:</p>
-<p><code>help("function_name")</code></p>
-<p>This will display the detailed documentation for the function,
-including its arguments, return values, and examples.</p>
-<p>For example, if you’re working with a function called
-<code><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService()</a></code>, you would use:</p>
-<p><code><a href="../reference/queryTheEPPOForService.html">help("queryTheEPPOForService")</a></code></p>
-</div>
-<div class="section level2">
-<h2 id="querying-a-specific-service">Querying a Specific Service<a class="anchor" aria-label="anchor" href="#querying-a-specific-service"></a>
-</h2>
-<p>To query a specific service (e.g., categorization) for an EPPO code
-(e.g., “BEMITA”), you can use the <code><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService()</a></code>
-function as follows:</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"&lt;function_name&gt;"</span><span class="op">)</span></span></code></pre></div>
+<p>This will show the full documentation for the function, including its
+arguments, return values, and usage examples.</p>
+<p>For example, if you are working with the <code><a href="../reference/taxon.html">taxon()</a></code>
+function, you can check its documentation with:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">categorization_BEMITA</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService</a></span><span class="op">(</span><span class="st">"BEMITA"</span>, service <span class="op">=</span> <span class="st">"categorization"</span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="expected-output">Expected Output:<a class="anchor" aria-label="anchor" href="#expected-output"></a>
-</h3>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/help.html" class="external-link">help</a></span><span class="op">(</span><span class="st">"taxon"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="querying-a-specific-category">Querying a specific category<a class="anchor" aria-label="anchor" href="#querying-a-specific-category"></a>
+</h2>
+<p>The <em>eppoFindeR</em> package allows you to query all categories
+available in version 2.0 of the EPPO APIs: General, Taxons, Taxon,
+Country, Tools, Reporting Services, and References.</p>
+<p>Each category has a corresponding function in the package with the
+same name in <em>lowerCamelCase</em> format: general(), taxons(),
+taxon(), country(), tools(), reportingService(), and reportings(). By
+default, these functions return all data available under the selected
+category, but you can customize the query by specifying the desired
+services.</p>
+<p>For example, to query all services of the Taxon category for the EPPO
+code “BEMITA”, you can use the following code:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">categorization_BEMITA</span></span>
-<span><span class="co">#&gt; # A tibble: 20 × 11</span></span>
-<span><span class="co">#&gt;    nomcontinent isocode country        qlist qlistlabel   yr_add yr_del yr_trans</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;         &lt;int&gt; &lt;lgl&gt;  &lt;lgl&gt;   </span></span>
-<span><span class="co">#&gt;  1 America      CL      Chile          1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt;  2 Asia         BH      Bahrain        2     A2 list        2003 NA     NA      </span></span>
-<span><span class="co">#&gt;  3 Asia         KZ      Kazakhstan     1     A1 list        2017 NA     NA      </span></span>
-<span><span class="co">#&gt;  4 Europe       AZ      Azerbaijan     1     A1 list        2007 NA     NA      </span></span>
-<span><span class="co">#&gt;  5 Europe       BY      Belarus        X     Quarantine …   1994 NA     NA      </span></span>
-<span><span class="co">#&gt;  6 Europe       GE      Georgia        1     A1 list        2018 NA     NA      </span></span>
-<span><span class="co">#&gt;  7 Europe       MD      Moldova        X     Quarantine …   2017 NA     NA      </span></span>
-<span><span class="co">#&gt;  8 Europe       NO      Norway         X     Quarantine …   2012 NA     NA      </span></span>
-<span><span class="co">#&gt;  9 Europe       RU      Russia         2     A2 list        2014 NA     NA      </span></span>
-<span><span class="co">#&gt; 10 Europe       RS      Serbia         1     A1 list        2015 NA     NA      </span></span>
-<span><span class="co">#&gt; 11 Europe       CH      Switzerland    1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 12 Europe       TR      Türkiye        2     A2 list        2016 NA     NA      </span></span>
-<span><span class="co">#&gt; 13 Europe       UA      Ukraine        1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 14 Europe       GB      United Kingdom 1     A1 list        2020 NA     NA      </span></span>
-<span><span class="co">#&gt; 15 Oceania      NZ      New Zealand    X     Quarantine …   2000 NA     NA      </span></span>
-<span><span class="co">#&gt; 16 RPPO/EU      9M      EAEU           2     A2 list        2016 NA     NA      </span></span>
-<span><span class="co">#&gt; 17 RPPO/EU      9A      EPPO           2     A2 list        1989 NA     NA      </span></span>
-<span><span class="co">#&gt; 18 RPPO/EU      9L      EU             P     PZ Quaranti…   2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 19 RPPO/EU      9L      EU             N     A1 Quaranti…   2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 20 RPPO/EU      9H      OIRSA          2     A2 list        1992 NA     NA      </span></span>
-<span><span class="co">#&gt; # ℹ 3 more variables: queriedEppocode &lt;chr&gt;, queriedOn &lt;date&gt;,</span></span>
-<span><span class="co">#&gt; #   queriedUrl &lt;glue&gt;</span></span></code></pre></div>
-<p><code>categorization_BEMITA</code> is a dataframe containing
-information about the categorization of the EPPO code “BEMITA”, and
-includes the following columns:</p>
-<ul>
-<li>
-<strong>nomcontinent</strong>: The continent where the country is
-located.</li>
-<li>
-<strong>isocode</strong>: The ISO country code.</li>
-<li>
-<strong>country</strong>: The name of the country or region.</li>
-<li>
-<strong>qlist</strong>: A code representing the pest status or
-classification.</li>
-<li>
-<strong>qlistlabel</strong>: A label explaining the pest
-classification (e.g., “A1 list” or “Quarantine pest”).</li>
-<li>
-<strong>yr_add</strong>: The year the country was added to the
-list.</li>
-<li>
-<strong>yr_del</strong>: The year the country was removed (if
-applicable).</li>
-<li>
-<strong>yr_trans</strong>: The year the country transitioned (if
-applicable).</li>
-<li>
-<strong>queriedEppocode</strong>: The input EPPO code.</li>
-<li>
-<strong>queriedOn</strong>: The date when the query was
-performed.</li>
-<li>
-<strong>queriedUrl</strong>: The queried URL.</li>
-</ul>
-</div>
-</div>
-<div class="section level2">
-<h2 id="querying-all-available-services">Querying All Available Services<a class="anchor" aria-label="anchor" href="#querying-all-available-services"></a>
-</h2>
-<p>If you wish to query all available services for the EPPO code
-“BEMITA”, you can use the <code><a href="../reference/queryTheWholeEPPO.html">queryTheWholeEPPO()</a></code> function.
-This will return a list of dataframes, each corresponding to a different
-service.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Some services require certain mandatory parameters, which must be
+provided when making the request. For example:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">result_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/queryTheWholeEPPO.html">queryTheWholeEPPO</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="expected-output-1">Expected Output:<a class="anchor" aria-label="anchor" href="#expected-output-1"></a>
-</h3>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/tools.html">tools</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"name2codes"</span><span class="op">)</span>, <span class="co"># The service to query (/tools/name2codes).</span></span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>    name2codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>      name <span class="op">=</span> <span class="st">"Bemisia tabaci"</span> <span class="co"># The required parameter.</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="querying-a-specific-service">Querying a specific service<a class="anchor" aria-label="anchor" href="#querying-a-specific-service"></a>
+</h2>
+<p>To query a specific service within an endpoint, eppoFindeR allows you
+to specify it directly in the function call. For example, to access only
+the <code>/taxons/taxon/categorization</code> service for the EPPO code
+“BEMITA”, you can use the <code><a href="../reference/taxon.html">taxon()</a></code> function as follows:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Print the names of the services in the result</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">result_list</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "general"        "names"          "taxonomy"       "categorization"</span></span>
-<span><span class="co">#&gt; [5] "hosts"          "pests"          "kingdom"</span></span>
-<span></span>
-<span><span class="co"># Print the data from a specific service, e.g., categorization</span></span>
-<span><span class="va">result_list</span><span class="op">$</span><span class="va">categorization</span></span>
-<span><span class="co">#&gt; # A tibble: 20 × 11</span></span>
-<span><span class="co">#&gt;    nomcontinent isocode country        qlist qlistlabel   yr_add yr_del yr_trans</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt;         &lt;int&gt; &lt;lgl&gt;  &lt;lgl&gt;   </span></span>
-<span><span class="co">#&gt;  1 America      CL      Chile          1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt;  2 Asia         BH      Bahrain        2     A2 list        2003 NA     NA      </span></span>
-<span><span class="co">#&gt;  3 Asia         KZ      Kazakhstan     1     A1 list        2017 NA     NA      </span></span>
-<span><span class="co">#&gt;  4 Europe       AZ      Azerbaijan     1     A1 list        2007 NA     NA      </span></span>
-<span><span class="co">#&gt;  5 Europe       BY      Belarus        X     Quarantine …   1994 NA     NA      </span></span>
-<span><span class="co">#&gt;  6 Europe       GE      Georgia        1     A1 list        2018 NA     NA      </span></span>
-<span><span class="co">#&gt;  7 Europe       MD      Moldova        X     Quarantine …   2017 NA     NA      </span></span>
-<span><span class="co">#&gt;  8 Europe       NO      Norway         X     Quarantine …   2012 NA     NA      </span></span>
-<span><span class="co">#&gt;  9 Europe       RU      Russia         2     A2 list        2014 NA     NA      </span></span>
-<span><span class="co">#&gt; 10 Europe       RS      Serbia         1     A1 list        2015 NA     NA      </span></span>
-<span><span class="co">#&gt; 11 Europe       CH      Switzerland    1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 12 Europe       TR      Türkiye        2     A2 list        2016 NA     NA      </span></span>
-<span><span class="co">#&gt; 13 Europe       UA      Ukraine        1     A1 list        2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 14 Europe       GB      United Kingdom 1     A1 list        2020 NA     NA      </span></span>
-<span><span class="co">#&gt; 15 Oceania      NZ      New Zealand    X     Quarantine …   2000 NA     NA      </span></span>
-<span><span class="co">#&gt; 16 RPPO/EU      9M      EAEU           2     A2 list        2016 NA     NA      </span></span>
-<span><span class="co">#&gt; 17 RPPO/EU      9A      EPPO           2     A2 list        1989 NA     NA      </span></span>
-<span><span class="co">#&gt; 18 RPPO/EU      9L      EU             P     PZ Quaranti…   2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 19 RPPO/EU      9L      EU             N     A1 Quaranti…   2019 NA     NA      </span></span>
-<span><span class="co">#&gt; 20 RPPO/EU      9H      OIRSA          2     A2 list        1992 NA     NA      </span></span>
-<span><span class="co">#&gt; # ℹ 3 more variables: queriedEppocode &lt;chr&gt;, queriedOn &lt;date&gt;,</span></span>
-<span><span class="co">#&gt; #   queriedUrl &lt;glue&gt;</span></span></code></pre></div>
-<p><code>names(result_list)</code> returns the names of the services:
-general, names, taxonomy, categorization, hosts, pests, and kingdom.</p>
-<p>Accessing a specific service (e.g.,
-<code>result_list$categorization</code>) will show the data related to
-that particular service for the EPPO code “BEMITA”.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"categorization"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="expected-output">Expected output<a class="anchor" aria-label="anchor" href="#expected-output"></a>
+</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="sc">$</span>categorization</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># A tibble: 20 × 12</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>   queried_eppo_code continent_id continent_name country_iso country_name    qlist qlist_label year_add</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>                    <span class="er">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span>       <span class="er">&lt;</span>chr<span class="sc">&gt;</span>           <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>int<span class="sc">&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a> <span class="dv">1</span> BEMITA                       <span class="dv">4</span> America        CL          Chile           <span class="dv">1</span>     A1 list         <span class="dv">2019</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a> <span class="dv">2</span> BEMITA                       <span class="dv">2</span> Asia           BH          Bahrain         <span class="dv">2</span>     A2 list         <span class="dv">2003</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a> <span class="dv">3</span> BEMITA                       <span class="dv">2</span> Asia           KZ          Kazakhstan      <span class="dv">1</span>     A1 list         <span class="dv">2017</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a> <span class="dv">4</span> BEMITA                       <span class="dv">1</span> Europe         AZ          Azerbaijan      <span class="dv">1</span>     A1 list         <span class="dv">2024</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a> <span class="dv">5</span> BEMITA                       <span class="dv">1</span> Europe         BY          Belarus         X     Quarantine…     <span class="dv">1994</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a> <span class="dv">6</span> BEMITA                       <span class="dv">1</span> Europe         GE          Georgia         <span class="dv">1</span>     A1 list         <span class="dv">2018</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a> <span class="dv">7</span> BEMITA                       <span class="dv">1</span> Europe         MD          Moldova, Repub… X     Quarantine…     <span class="dv">2017</span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a> <span class="dv">8</span> BEMITA                       <span class="dv">1</span> Europe         NO          Norway          X     Quarantine…     <span class="dv">2012</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a> <span class="dv">9</span> BEMITA                       <span class="dv">1</span> Europe         RU          Russian Federa… <span class="dv">2</span>     A2 list         <span class="dv">2014</span></span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a><span class="dv">10</span> BEMITA                       <span class="dv">1</span> Europe         RS          Serbia          <span class="dv">1</span>     A1 list         <span class="dv">2015</span></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="dv">11</span> BEMITA                       <span class="dv">1</span> Europe         CH          Switzerland     <span class="dv">1</span>     A1 list         <span class="dv">2019</span></span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a><span class="dv">12</span> BEMITA                       <span class="dv">1</span> Europe         TR          Türkiye         <span class="dv">2</span>     A2 list         <span class="dv">2016</span></span>
+<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a><span class="dv">13</span> BEMITA                       <span class="dv">1</span> Europe         UA          Ukraine         <span class="dv">1</span>     A1 list         <span class="dv">2019</span></span>
+<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a><span class="dv">14</span> BEMITA                       <span class="dv">1</span> Europe         GB          United Kingdom  <span class="dv">1</span>     A1 list         <span class="dv">2020</span></span>
+<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="dv">15</span> BEMITA                       <span class="dv">5</span> Oceania        NZ          New Zealand     X     Quarantine…     <span class="dv">2000</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="dv">16</span> BEMITA                       <span class="dv">6</span> RPPO<span class="sc">/</span>EU        <span class="dv">9</span>M          EAEU            <span class="dv">2</span>     A2 list         <span class="dv">2016</span></span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a><span class="dv">17</span> BEMITA                       <span class="dv">6</span> RPPO<span class="sc">/</span>EU        <span class="dv">9</span>A          EPPO            <span class="dv">2</span>     A2 list         <span class="dv">1989</span></span>
+<span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a><span class="dv">18</span> BEMITA                       <span class="dv">6</span> RPPO<span class="sc">/</span>EU        <span class="dv">9</span><span class="dt">L</span>          EU              P     PZ Quarant…     <span class="dv">2019</span></span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a><span class="dv">19</span> BEMITA                       <span class="dv">6</span> RPPO<span class="sc">/</span>EU        <span class="dv">9</span><span class="dt">L</span>          EU              N     A1 Quarant…     <span class="dv">2019</span></span>
+<span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a><span class="dv">20</span> BEMITA                       <span class="dv">6</span> RPPO<span class="sc">/</span>EU        <span class="dv">9</span>H          OIRSA           <span class="dv">2</span>     A2 list         <span class="dv">1992</span></span>
+<span id="cb10-25"><a href="#cb10-25" tabindex="-1"></a><span class="co"># ℹ 4 more variables: year_delete &lt;lgl&gt;, year_transient &lt;lgl&gt;, queried_url &lt;chr&gt;, queried_on &lt;dttm&gt;</span></span></code></pre></div>
+<p>All function calls return a list of dataframes, each containing the
+information from the requested services.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="wrangling-data">Wrangling Data<a class="anchor" aria-label="anchor" href="#wrangling-data"></a>
+<h2 id="querying-all-available-services">Querying all available services<a class="anchor" aria-label="anchor" href="#querying-all-available-services"></a>
 </h2>
-<p>The <em>eppoFindeR</em> package also provides a data wrangling
-function, <code><a href="../reference/taxonomyRanked.html">taxonomyRanked()</a></code>, which can combine the data
-fetched from the “taxonomy” and “kingdom” EPPO services to create a
-unified, integrated dataframe.</p>
-<p>For example, assume you have two dataframes: <code>taxonomy</code>
-and <code>kingdom</code>, which were obtained by querying the “taxonomy”
-and “kingdom” services for the EPPO code “BEMITA” using the
-<code><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService()</a></code> function.</p>
-<p>You can combine these two dataframes as follows:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Query the taxonomy service for the EPPO code "BEMITA"</span></span>
-<span><span class="va">taxonomy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService</a></span><span class="op">(</span><span class="st">"BEMITA"</span>, service <span class="op">=</span> <span class="st">"taxonomy"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Query the kingdom service for the EPPO code "BEMITA"</span></span>
-<span><span class="va">kingdom</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/queryTheEPPOForService.html">queryTheEPPOForService</a></span><span class="op">(</span><span class="st">"BEMITA"</span>, service <span class="op">=</span> <span class="st">"kingdom"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Combine taxonomy and kingdom data</span></span>
-<span><span class="va">wrangled_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/taxonomyRanked.html">taxonomyRanked</a></span><span class="op">(</span><span class="va">taxonomy</span>, <span class="va">kingdom</span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="expected-output-2">Expected Output:<a class="anchor" aria-label="anchor" href="#expected-output-2"></a>
-</h3>
+<p>To fetch data from all available services within a specific endpoint,
+simply use the corresponding function without modifying the services
+parameter. Each function will return a list of dataframes, with each
+dataframe containing information from one service.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">wrangled_data</span></span>
-<span><span class="co">#&gt; # A tibble: 9 × 8</span></span>
-<span><span class="co">#&gt;   rank    codeid eppocode prefname   level queriedEppocode queriedOn  queriedUrl</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;           &lt;date&gt;     &lt;glue&gt;    </span></span>
-<span><span class="co">#&gt; 1 kingdom  57021 1ANIMK   Animalia       1 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 2 &lt;NA&gt;     57200 1ARTHP   Arthropoda     2 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 3 &lt;NA&gt;     77963 1HEXAQ   Hexapoda       3 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 4 &lt;NA&gt;     59061 1INSEC   Insecta        4 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 5 &lt;NA&gt;     58830 1HEMIO   Hemiptera      5 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 6 &lt;NA&gt;     73260 1STERR   Sternorrh…     6 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 7 &lt;NA&gt;     56905 1ALEYF   Aleyrodid…     7 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 8 &lt;NA&gt;     57321 1BEMIG   Bemisia        8 BEMITA          2024-12-19 https://d…</span></span>
-<span><span class="co">#&gt; 9 &lt;NA&gt;      5935 BEMITA   Bemisia t…     9 BEMITA          2024-12-19 https://d…</span></span></code></pre></div>
-<p><code>wrangled_data</code> is a dataframe that combines the taxonomy
-and kingdom information for the EPPO code “BEMITA”. This integration
-provides a more comprehensive view of the organism’s taxonomic rank.</p>
-<p>Specifically, the output dataframe contains the following
-columns:</p>
-<ul>
-<li>
-<strong>rank</strong>: The taxonomic rank.</li>
-<li>
-<strong>codeid</strong>: A unique identifier for each entry.</li>
-<li>
-<strong>eppocode</strong>: The EPPO code representing the taxonomic
-group.</li>
-<li>
-<strong>prefname</strong>: The preferred name of the taxonomic group
-(e.g., “Animalia”, “Insecta”).</li>
-<li>
-<strong>level</strong>: The taxonomic level in the hierarchy (1 for
-the broadest category, progressing to more specific levels).</li>
-<li>
-<strong>queriedEppocode</strong>: The input EPPO code.</li>
-<li>
-<strong>queriedOn</strong>: The date when the query was
-performed.</li>
-<li>
-<strong>queriedUrl</strong>: The queried URL.</li>
-</ul>
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="expected-output-1">Expected output<a class="anchor" aria-label="anchor" href="#expected-output-1"></a>
+</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Print the names of the services in the result.</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">names</span>(data)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"overview"</span>           <span class="st">"infos"</span>              <span class="st">"names"</span>              <span class="st">"taxonomy"</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a> [<span class="dv">5</span>] <span class="st">"categorization"</span>     <span class="st">"kingdom"</span>            <span class="st">"hosts"</span>              <span class="st">"pests"</span>           </span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a> [<span class="dv">9</span>] <span class="st">"vectors"</span>            <span class="st">"vectorof"</span>           <span class="st">"bca"</span>                <span class="st">"bcaof"</span>           </span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>[<span class="dv">13</span>] <span class="st">"photos"</span>             <span class="st">"reporting_articles"</span> <span class="st">"documents"</span>          <span class="st">"standards"</span>       </span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>[<span class="dv">17</span>] <span class="st">"distribution"</span>      </span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co"># Print the data from a specific service.</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>data<span class="sc">$</span>overview</span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co"># A tibble: 1 × 11</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>  queried_eppo_code eppocode datecreate         lastupdate infos replacedby prefname is_active datatype</span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>chr<span class="sc">&gt;</span>              <span class="er">&lt;</span>chr<span class="sc">&gt;</span>      <span class="er">&lt;</span>lgl<span class="sc">&gt;</span> <span class="er">&lt;</span>lgl<span class="sc">&gt;</span>      <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>lgl<span class="sc">&gt;</span>     <span class="er">&lt;</span>chr<span class="sc">&gt;</span>   </span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="dv">1</span> BEMITA            BEMITA   <span class="dv">2002-10-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span>… <span class="dv">2002-10-2</span>… <span class="cn">NA</span>    <span class="cn">NA</span>         Bemisia… <span class="cn">TRUE</span>      GAI     </span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co"># ℹ 2 more variables: queried_url &lt;chr&gt;, queried_on &lt;dttm&gt;</span></span></code></pre></div>
+<p>Using <code>names(data)</code> will display the names of the queried
+services. You can then access a specific service to view the data
+associated with it.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="retrieving-countries-in-regional-plant-protection-organizations">Retrieving Countries in Regional Plant Protection Organizations<a class="anchor" aria-label="anchor" href="#retrieving-countries-in-regional-plant-protection-organizations"></a>
+<h2 id="data-wrangling">Data wrangling<a class="anchor" aria-label="anchor" href="#data-wrangling"></a>
 </h2>
-<p>The <code><a href="../reference/gettingCountries.html">gettingCountries()</a></code> function allows you to retrieve
-all the member countries of a specific Regional Plant Protection
-Organization (RPPO).</p>
-<p>For example, to get the member countries of the EAEU (Eurasian
-Economic Union), you can use the following command:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">EAEU_countries</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/gettingCountries.html">gettingCountries</a></span><span class="op">(</span><span class="st">'EAEU'</span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="expected-output-3">Expected Output:<a class="anchor" aria-label="anchor" href="#expected-output-3"></a>
-</h3>
+<p>The <em>eppoFindeR</em> package provides a convenient function,
+<code><a href="../reference/uniformTaxonomy.html">uniformTaxonomy()</a></code>, to create a complete and standardized
+taxonomy dataframe. This function takes the taxonomy data returned by
+the taxonomy service and ensures a uniform structure, including all
+expected taxonomic ranks, even if some ranks are missing in the original
+result.</p>
+<p>For example, assume you have retrieved taxonomy data for the EPPO
+code “BEMITA” using the <code><a href="../reference/taxon.html">taxon()</a></code> function:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">EAEU_countries</span></span>
-<span><span class="co">#&gt; [1] "Armenia,Belarus,Kazakhstan,Kyrgyzstan,Russia"</span></span></code></pre></div>
-<p><code>EAEU_countries</code> is a vector of country names that are
-members of the EAEU.</p>
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"taxonomy"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>You can then generate a uniform taxonomy table with all ranks
+using:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">taxonomy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/uniformTaxonomy.html">uniformTaxonomy</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">taxonomy</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="expected-output-2">Expected output<a class="anchor" aria-label="anchor" href="#expected-output-2"></a>
+</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># A tibble: 11 × 6</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>   type      queried_eppo_code eppocode prefname       queried_url                  queried_on         </span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>   <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>     <span class="er">&lt;</span>chr<span class="sc">&gt;</span>             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>chr<span class="sc">&gt;</span>          <span class="er">&lt;</span>chr<span class="sc">&gt;</span>                        <span class="er">&lt;</span>dttm<span class="sc">&gt;</span>             </span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a> <span class="dv">1</span> Kingdom   BEMITA            <span class="dv">1</span>ANIMK   Animalia       https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a> <span class="dv">2</span> Phylum    BEMITA            <span class="dv">1</span>ARTHP   Arthropoda     https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a> <span class="dv">3</span> Subphylum BEMITA            <span class="dv">1</span>HEXAQ   Hexapoda       https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a> <span class="dv">4</span> Class     BEMITA            <span class="dv">1</span>INSEC   Insecta        https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a> <span class="dv">5</span> Subclass  <span class="cn">NA</span>                <span class="cn">NA</span>       <span class="cn">NA</span>             <span class="cn">NA</span>                           <span class="cn">NA</span>                 </span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a> <span class="dv">6</span> Order     BEMITA            <span class="dv">1</span>HEMIO   Hemiptera      https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a> <span class="dv">7</span> Suborder  BEMITA            <span class="dv">1</span>STERR   Sternorrhyncha https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a> <span class="dv">8</span> Family    BEMITA            <span class="dv">1</span>ALEYF   Aleyrodidae    https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a> <span class="dv">9</span> Subfamily <span class="cn">NA</span>                <span class="cn">NA</span>       <span class="cn">NA</span>             <span class="cn">NA</span>                           <span class="cn">NA</span>                 </span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="dv">10</span> Genus     BEMITA            <span class="dv">1</span>BEMIG   Bemisia        https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a><span class="dv">11</span> Species   BEMITA            BEMITA   Bemisia tabaci https<span class="sc">:</span><span class="er">//</span>api.eppo.int<span class="sc">/</span>gd<span class="sc">/</span>v2<span class="sc">/</span>… <span class="dv">2025-11-18</span> <span class="dv">14</span><span class="sc">:</span><span class="dv">29</span><span class="sc">:</span><span class="dv">50</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
-<h2 id="data-dump-for-multiple-eppo-codes">Data Dump for Multiple EPPO Codes<a class="anchor" aria-label="anchor" href="#data-dump-for-multiple-eppo-codes"></a>
+<h2 id="data-retrieval-for-multiple-eppo-or-iso-codes">Data retrieval for multiple EPPO or ISO codes<a class="anchor" aria-label="anchor" href="#data-retrieval-for-multiple-eppo-or-iso-codes"></a>
 </h2>
-<p>The <code><a href="../reference/dataDump.html">dataDump()</a></code> function allows you to retrieve a
-comprehensive data dump for multiple EPPO codes. This function queries
-all available EPPO services for a list of input codes.</p>
-<p>The following is an example of how the function can be used to query
-all available EPPO services for the EPPO codes “APHIPO” and
-“LEUCSC”:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">data_dump</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dataDump.html">dataDump</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"APHIPO"</span>, <span class="st">"LEUCSC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>The <code><a href="../reference/taxon.html">taxon()</a></code> and <code><a href="../reference/country.html">country()</a></code> functions allow
+you to retrieve also a complete data dump for multiple EPPO or ISO codes
+by querying all available EPPO services for each of them.</p>
+<p>Here is an example showing how to use the function to fetch all
+available information for the EPPO codes “BEMITA” and “GOSHI”:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/taxon.html">taxon</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"BEMITA"</span>, <span class="st">"GOSHI"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
-<h3 id="expected-output-4">Expected Output:<a class="anchor" aria-label="anchor" href="#expected-output-4"></a>
+<h3 id="expected-output-3">Expected output<a class="anchor" aria-label="anchor" href="#expected-output-3"></a>
 </h3>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Print the names of the services in the result</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">data_dump</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "general"        "names"          "taxonomy"       "categorization"</span></span>
-<span><span class="co">#&gt; [5] "hosts"          "pests"          "kingdom"</span></span>
-<span></span>
-<span><span class="co"># Print the data from a specific service, e.g., general</span></span>
-<span><span class="va">data_dump</span><span class="op">$</span><span class="va">general</span></span>
-<span><span class="co">#&gt; # A tibble: 16 × 11</span></span>
-<span><span class="co">#&gt;    pestCode codeid eppocode status c_date         m_date prefname attached_infos</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    &lt;named list&gt;  </span></span>
-<span><span class="co">#&gt;  1 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  2 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  3 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  4 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  5 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  6 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  7 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  8 BEMITA     5935 BEMITA   A      2002-10-28 00… 2002-… Bemisia… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt;  9 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 10 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 11 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 12 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 13 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 14 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 15 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; 16 LEUCSC    13110 LEUCSC   A      2000-12-25 00… 2000-… Leucopt… &lt;int [1]&gt;     </span></span>
-<span><span class="co">#&gt; # ℹ 3 more variables: queriedEppocode &lt;chr&gt;, queriedOn &lt;date&gt;,</span></span>
-<span><span class="co">#&gt; #   queriedUrl &lt;glue&gt;</span></span></code></pre></div>
-<p>The output is a list of dataframes, each corresponding to a different
-service: general, names, taxonomy, categorization, hosts, pests, and
-kingdom.</p>
-<p>Accessing a specific service (e.g., <code>data_dump$general</code>)
-will show the data related to that particular service for the EPPO codes
-“APHIPO” and “LEUCSC”. The column <code>queriedEppocode</code> in the
-dataframe distinguishes which data have been retrieved for each EPPO
-code.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># Print the names of the services in the result.</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">names</span>(data)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"overview"</span>           <span class="st">"infos"</span>              <span class="st">"names"</span>              <span class="st">"taxonomy"</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a> [<span class="dv">5</span>] <span class="st">"categorization"</span>     <span class="st">"kingdom"</span>            <span class="st">"hosts"</span>              <span class="st">"pests"</span>           </span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a> [<span class="dv">9</span>] <span class="st">"vectors"</span>            <span class="st">"vectorof"</span>           <span class="st">"bca"</span>                <span class="st">"bcaof"</span>           </span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>[<span class="dv">13</span>] <span class="st">"photos"</span>             <span class="st">"reporting_articles"</span> <span class="st">"documents"</span>          <span class="st">"standards"</span>       </span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>[<span class="dv">17</span>] <span class="st">"distribution"</span>      </span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="co"># Print the data from a specific service.</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>data<span class="sc">$</span>overview</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co"># A tibble: 2 × 11</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>  queried_eppo_code eppocode datecreate         lastupdate infos replacedby prefname is_active datatype</span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>  <span class="sc">&lt;</span>chr<span class="sc">&gt;</span>             <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>chr<span class="sc">&gt;</span>              <span class="er">&lt;</span>chr<span class="sc">&gt;</span>      <span class="er">&lt;</span>chr<span class="sc">&gt;</span> <span class="er">&lt;</span>lgl<span class="sc">&gt;</span>      <span class="er">&lt;</span>chr<span class="sc">&gt;</span>    <span class="er">&lt;</span>lgl<span class="sc">&gt;</span>     <span class="er">&lt;</span>chr<span class="sc">&gt;</span>   </span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="dv">1</span> BEMITA            BEMITA   <span class="dv">2002-10-28</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span>… <span class="dv">2002-10-2</span>… <span class="cn">NA</span>    <span class="cn">NA</span>         Bemisia… <span class="cn">TRUE</span>      GAI     </span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a><span class="dv">2</span> GOSHI             GOSHI    <span class="dv">2004-04-21</span> <span class="dv">00</span><span class="sc">:</span><span class="dv">00</span><span class="sc">:</span>… <span class="dv">2004-04-2</span>… <span class="sc">&lt;</span>p<span class="sc">&gt;</span>M… <span class="cn">NA</span>         Gossypi… <span class="cn">TRUE</span>      PFL     </span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a><span class="co"># ℹ 2 more variables: queried_url &lt;chr&gt;, queried_on &lt;dttm&gt;</span></span></code></pre></div>
+<p>Using <code>names(data)</code> will display the names of the queried
+services. You can then access a specific service to view the data
+associated with it.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -460,11 +348,11 @@ code.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Luca Belmonte, Dayana Stephanie Buzle, Rafael Vieira, Agata Kaczmarek.</p>
+  <p>Developed by Lorenzo Copelli, Dayana Stephanie Buzle, Rafael Vieira, Agata Kaczmarek, Luca Belmonte.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
