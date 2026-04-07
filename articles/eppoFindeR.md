@@ -1,0 +1,309 @@
+# eppoFindeR
+
+## Overview
+
+**eppoFindeR** provides an R interface to the public APIs of the
+**European and Mediterranean Plant Protection Organization (EPPO)**
+database. The package facilitates access to a wide range of pest-related
+information collected and maintained by EPPO, allowing users to query,
+retrieve, and process this data directly from R.
+
+The package is intended for researchers, analysts, and practitioners in
+plant protection who require convenient programmatic access to EPPO
+data.
+
+## Installation
+
+### From CRAN
+
+``` r
+install.packages("eppoFindeR")
+```
+
+### Development version (from GitHub)
+
+To install the latest development version:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openefsa/eppoFindeR")
+```
+
+## Requirements
+
+An active internet connection is required, as the package communicates
+with EPPO’s online services to fetch and process data.
+
+## Working with API keys
+
+The *eppoFindeR* package requires your unique API token to function
+properly. You can provide this token in one of two ways:
+
+1.  By setting it in the `.Renviron` file.  
+2.  By including it manually in each API request.
+
+### Setting the API key via `.Renviron`
+
+The `.Renviron` file is used to define environment variables that R
+loads automatically at the start of each session. This approach is
+particularly convenient for sensitive information like API keys, as it
+allows you to use them in any R script or function without hardcoding
+them.
+
+Place the `.Renviron` file in your home directory (for example,
+`C:/Users/username/Documents/.Renviron` on Windows or `~/.Renviron` on
+Unix-like systems). You can create or edit this file with any plain text
+editor.
+
+Add your EPPO API key in the following format:
+
+`EPPO_API_KEY=<your_eppo_api_key>`
+
+After saving the file, R will automatically read the token on startup.
+
+### Setting the API key manually for each request
+
+Alternatively, you can provide the API key directly in the `apiKey`
+argument of functions that require it. This is useful if you want to use
+different tokens for different calls, or if you prefer not to store the
+token globally. For example:
+
+``` r
+taxon(c("BEMITA"), apiKey = "<your_eppo_api_key>")
+```
+
+## Basic usage
+
+The main purpose of *eppoFindeR* is to query the EPPO database for
+specific EPPO codes and retrieve relevant information across various
+endpoints. For each endpoint, you can either:
+
+1.  Query all available services to obtain more comprehensive data.  
+2.  Query one or more services to obtain specific data.
+
+For plant and pest species, the basic information returned includes
+scientific names, synonyms, common names in different languages, and
+taxonomic classification. For pests of regulatory interest, you can also
+retrieve more detailed information, such as host plants and quarantine
+categorization.
+
+Below are examples demonstrating how to use the functions in this
+package. First, load the *eppoFindeR* package:
+
+``` r
+library(eppoFindeR)
+```
+
+To explore the arguments and usage of a specific function, you can run:
+
+``` r
+help("<function_name>")
+```
+
+This will show the full documentation for the function, including its
+arguments, return values, and usage examples.
+
+For example, if you are working with the
+[`taxon()`](https://openefsa.github.io/eppoFindeR/reference/taxon.md)
+function, you can check its documentation with:
+
+``` r
+help("taxon")
+```
+
+## Querying a specific category
+
+The *eppoFindeR* package allows you to query all categories available in
+version 2.0 of the EPPO APIs: General, Taxons, Taxon, Country, Tools,
+Reporting Services, and References.
+
+Each category has a corresponding function in the package with the same
+name in *lowerCamelCase* format: general(), taxons(), taxon(),
+country(), tools(), reportingService(), and reportings(). By default,
+these functions return all data available under the selected category,
+but you can customize the query by specifying the desired services.
+
+For example, to query all services of the Taxon category for the EPPO
+code “BEMITA”, you can use the following code:
+
+``` r
+taxon(c("BEMITA"))
+```
+
+Some services require certain mandatory parameters, which must be
+provided when making the request. For example:
+
+``` r
+tools(
+  c("name2codes"), # The service to query (/tools/name2codes).
+  params = list(
+    name2codes = list(
+      name = "Bemisia tabaci" # The required parameter.
+    )
+  )
+)
+```
+
+## Querying a specific service
+
+To query a specific service within an endpoint, eppoFindeR allows you to
+specify it directly in the function call. For example, to access only
+the `/taxons/taxon/categorization` service for the EPPO code “BEMITA”,
+you can use the
+[`taxon()`](https://openefsa.github.io/eppoFindeR/reference/taxon.md)
+function as follows:
+
+``` r
+taxon(c("BEMITA"), c("categorization"))
+```
+
+### Expected output
+
+``` r
+$categorization
+# A tibble: 20 × 12
+   queried_eppo_code continent_id continent_name country_iso country_name    qlist qlist_label year_add
+   <chr>                    <int> <chr>          <chr>       <chr>           <chr> <chr>          <int>
+ 1 BEMITA                       4 America        CL          Chile           1     A1 list         2019
+ 2 BEMITA                       2 Asia           BH          Bahrain         2     A2 list         2003
+ 3 BEMITA                       2 Asia           KZ          Kazakhstan      1     A1 list         2017
+ 4 BEMITA                       1 Europe         AZ          Azerbaijan      1     A1 list         2024
+ 5 BEMITA                       1 Europe         BY          Belarus         X     Quarantine…     1994
+ 6 BEMITA                       1 Europe         GE          Georgia         1     A1 list         2018
+ 7 BEMITA                       1 Europe         MD          Moldova, Repub… X     Quarantine…     2017
+ 8 BEMITA                       1 Europe         NO          Norway          X     Quarantine…     2012
+ 9 BEMITA                       1 Europe         RU          Russian Federa… 2     A2 list         2014
+10 BEMITA                       1 Europe         RS          Serbia          1     A1 list         2015
+11 BEMITA                       1 Europe         CH          Switzerland     1     A1 list         2019
+12 BEMITA                       1 Europe         TR          Türkiye         2     A2 list         2016
+13 BEMITA                       1 Europe         UA          Ukraine         1     A1 list         2019
+14 BEMITA                       1 Europe         GB          United Kingdom  1     A1 list         2020
+15 BEMITA                       5 Oceania        NZ          New Zealand     X     Quarantine…     2000
+16 BEMITA                       6 RPPO/EU        9M          EAEU            2     A2 list         2016
+17 BEMITA                       6 RPPO/EU        9A          EPPO            2     A2 list         1989
+18 BEMITA                       6 RPPO/EU        9L          EU              P     PZ Quarant…     2019
+19 BEMITA                       6 RPPO/EU        9L          EU              N     A1 Quarant…     2019
+20 BEMITA                       6 RPPO/EU        9H          OIRSA           2     A2 list         1992
+# ℹ 4 more variables: year_delete <lgl>, year_transient <lgl>, queried_url <chr>, queried_on <dttm>
+```
+
+All function calls return a list of dataframes, each containing the
+information from the requested services.
+
+## Querying all available services
+
+To fetch data from all available services within a specific endpoint,
+simply use the corresponding function without modifying the services
+parameter. Each function will return a list of dataframes, with each
+dataframe containing information from one service.
+
+``` r
+data <- taxon(c("BEMITA"))
+```
+
+### Expected output
+
+``` r
+# Print the names of the services in the result.
+names(data)
+ [1] "overview"           "infos"              "names"              "taxonomy"
+ [5] "categorization"     "kingdom"            "hosts"              "pests"           
+ [9] "vectors"            "vectorof"           "bca"                "bcaof"           
+[13] "photos"             "reporting_articles" "documents"          "standards"       
+[17] "distribution"      
+
+# Print the data from a specific service.
+data$overview
+# A tibble: 1 × 11
+  queried_eppo_code eppocode datecreate         lastupdate infos replacedby prefname is_active datatype
+  <chr>             <chr>    <chr>              <chr>      <lgl> <lgl>      <chr>    <lgl>     <chr>   
+1 BEMITA            BEMITA   2002-10-28 00:00:… 2002-10-2… NA    NA         Bemisia… TRUE      GAI     
+# ℹ 2 more variables: queried_url <chr>, queried_on <dttm>
+```
+
+Using `names(data)` will display the names of the queried services. You
+can then access a specific service to view the data associated with it.
+
+## Data wrangling
+
+The *eppoFindeR* package provides a convenient function,
+[`uniformTaxonomy()`](https://openefsa.github.io/eppoFindeR/reference/uniformTaxonomy.md),
+to create a complete and standardized taxonomy dataframe. This function
+takes the taxonomy data returned by the taxonomy service and ensures a
+uniform structure, including all expected taxonomic ranks, even if some
+ranks are missing in the original result.
+
+For example, assume you have retrieved taxonomy data for the EPPO code
+“BEMITA” using the
+[`taxon()`](https://openefsa.github.io/eppoFindeR/reference/taxon.md)
+function:
+
+``` r
+data <- taxon(c("BEMITA"), c("taxonomy"))
+```
+
+You can then generate a uniform taxonomy table with all ranks using:
+
+``` r
+taxonomy <- uniformTaxonomy(data$taxonomy)
+```
+
+### Expected output
+
+``` r
+# A tibble: 11 × 6
+   type      queried_eppo_code eppocode prefname       queried_url                  queried_on         
+   <chr>     <chr>             <chr>    <chr>          <chr>                        <dttm>             
+ 1 Kingdom   BEMITA            1ANIMK   Animalia       https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 2 Phylum    BEMITA            1ARTHP   Arthropoda     https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 3 Subphylum BEMITA            1HEXAQ   Hexapoda       https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 4 Class     BEMITA            1INSEC   Insecta        https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 5 Subclass  NA                NA       NA             NA                           NA                 
+ 6 Order     BEMITA            1HEMIO   Hemiptera      https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 7 Suborder  BEMITA            1STERR   Sternorrhyncha https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 8 Family    BEMITA            1ALEYF   Aleyrodidae    https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+ 9 Subfamily NA                NA       NA             NA                           NA                 
+10 Genus     BEMITA            1BEMIG   Bemisia        https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+11 Species   BEMITA            BEMITA   Bemisia tabaci https://api.eppo.int/gd/v2/… 2025-11-18 14:29:50
+```
+
+## Data retrieval for multiple EPPO or ISO codes
+
+The
+[`taxon()`](https://openefsa.github.io/eppoFindeR/reference/taxon.md)
+and
+[`country()`](https://openefsa.github.io/eppoFindeR/reference/country.md)
+functions allow you to retrieve also a complete data dump for multiple
+EPPO or ISO codes by querying all available EPPO services for each of
+them.
+
+Here is an example showing how to use the function to fetch all
+available information for the EPPO codes “BEMITA” and “GOSHI”:
+
+``` r
+data <- taxon(c("BEMITA", "GOSHI"))
+```
+
+### Expected output
+
+``` r
+# Print the names of the services in the result.
+names(data)
+ [1] "overview"           "infos"              "names"              "taxonomy"
+ [5] "categorization"     "kingdom"            "hosts"              "pests"           
+ [9] "vectors"            "vectorof"           "bca"                "bcaof"           
+[13] "photos"             "reporting_articles" "documents"          "standards"       
+[17] "distribution"      
+
+# Print the data from a specific service.
+data$overview
+# A tibble: 2 × 11
+  queried_eppo_code eppocode datecreate         lastupdate infos replacedby prefname is_active datatype
+  <chr>             <chr>    <chr>              <chr>      <chr> <lgl>      <chr>    <lgl>     <chr>   
+1 BEMITA            BEMITA   2002-10-28 00:00:… 2002-10-2… NA    NA         Bemisia… TRUE      GAI     
+2 GOSHI             GOSHI    2004-04-21 00:00:… 2004-04-2… <p>M… NA         Gossypi… TRUE      PFL     
+# ℹ 2 more variables: queried_url <chr>, queried_on <dttm>
+```
+
+Using `names(data)` will display the names of the queried services. You
+can then access a specific service to view the data associated with it.
