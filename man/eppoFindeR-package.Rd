@@ -4,17 +4,16 @@
 \name{eppoFindeR-package}
 \alias{eppoFindeR}
 \alias{eppoFindeR-package}
-\title{eppoFindeR: A Wrapper for 'EPPO' Codes}
+\title{eppoFindeR: R interface to the EPPO Database and Public APIs}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A wrapper around the European and Mediterranean Plant Protection Organization ('EPPO') database public 'APIs' at \url{https://data.eppo.int/}. It enables users to retrieve 'EPPO'-related data through searches across the entire 'EPPO' database or by utilizing specific services, including categorization, taxonomy, and more. The package also includes a data wrangling function to integrate taxonomy and rank information, and a function that returns the list of member countries for each Regional Plant Protection Organization acronym which is used in the 'EPPO' database.
+The eppoFindeR package provides an interface to the public APIs of the European and Mediterranean Plant Protection Organization (EPPO) database. It enables users to retrieve EPPO data by accessing specific services and datasets. The package also includes utilities for data wrangling, including the integration of taxonomy with rank information.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/openefsa/eppoFindeR}
-  \item \url{https://openefsa.github.io/eppoFindeR/}
+  \item \url{https://openefsa.github.io/eppoFindeR}
   \item Report bugs at \url{https://github.com/openefsa/eppoFindeR/issues}
 }
 
@@ -24,6 +23,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Lorenzo Copelli (\href{https://orcid.org/0009-0002-4305-065X}{ORCID})
   \item Dayana Stephanie Buzle (\href{https://orcid.org/0009-0003-2990-7431}{ORCID})
   \item Rafael Vieira (\href{https://orcid.org/0009-0009-0289-5438}{ORCID})
   \item Agata Kaczmarek (\href{https://orcid.org/0000-0002-7463-5821}{ORCID})

@@ -1,29 +1,51 @@
-# eppoFindeR <img src="man/figures/logo.png" height="200" align="right"/>
+# eppoFindeR <img src="man/figures/logo.png" height="140" align="right"/>
 
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![codecov](https://codecov.io/gh/openefsa/eppoFindeR/graph/badge.svg?token=6FLJOPL6II)](https://codecov.io/gh/openefsa/eppoFindeR)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![codecov](https://codecov.io/gh/openefsa/eppoFindeR/branch/main/graph/badge.svg?token=TR7ETTDG2Z)](https://codecov.io/gh/openefsa/eppoFindeR)
 
-# Introduction
+## Overview
 
-Welcome to the *eppoFindeR* package! This package is a wrapper around the public APIs of the European and Mediterranean Plant Protection Organization (EPPO) database. It provides a straightforward way to access a wide range of pest-specific information that has been produced or collected by EPPO.
+**eppoFindeR** provides an R interface to the public APIs of the **European and Mediterranean Plant Protection Organization (EPPO)** database.
+The package facilitates access to a wide range of pest-related information collected and maintained by EPPO, allowing users to query, retrieve, and process this data directly from R.
 
-*eppoFindeR* is designed for use by researchers and practitioners working in plant protection who need easy access to the EPPO database using R.
+The package is intended for researchers, analysts, and practitioners in plant protection who require convenient programmatic access to EPPO data.
 
-# Getting Started
+## Installation
 
-To use the *eppoFindeR* package, you need a stable internet connection, as it interacts with the EPPO database online services to fetch and manipulate data. A reliable internet connection is essential for the functionality of the package.
+### From CRAN
 
-You can install the *eppoFindeR* package from CRAN using the following command:
-
-```         
+```r
 install.packages("eppoFindeR")
 ```
 
-Alternatively, if you want to install the package from GitHub (for the latest development version), use:
+### Development version (from GitHub)
 
-```
+To install the latest development version:
+
+```r
 # install.packages("devtools")
-
 devtools::install_github("openefsa/eppoFindeR")
 ```
 
-For a detailed guide and usage examples, please refer to the [full vignette](https://github.com/openefsa/eppoFindeR/blob/HEAD/vignettes/eppoFindeR.Rmd).
+## Requirements
+
+An active internet connection is required, as the package communicates with EPPO’s online services to fetch and process data.
+
+## Usage
+
+Once installed, load the package as usual:
+
+```r
+library(eppoFindeR)
+```
+
+Basic usage examples and full documentation are available in the package [vignette](vignettes/eppoFindeR.Rmd):
+
+```r
+vignette("eppoFindeR")
+```
+
+## Links
+
+- **Source code:** [GitHub – openefsa/eppoFindeR](https://github.com/openefsa/eppoFindeR)  
+- **Bug reports:** [Issues on GitHub](https://github.com/openefsa/eppoFindeR/issues)  
+- **EPPO Global Database:** [https://gd.eppo.int](https://gd.eppo.int)
