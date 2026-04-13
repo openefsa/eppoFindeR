@@ -1,6 +1,6 @@
 Package: eppoFindeR
 Type: Package
-Title: R interface to the EPPO Database and Public APIs
+Title: R Interface to the EPPO Database and Public APIs
 Version: 2.0.0
 Maintainer: Luca Belmonte <luca.belmonte@efsa.europa.eu>
 Authors@R:
