@@ -29,7 +29,7 @@ reportingService(
 
   `list`. A named list of query parameters to include in the request.
   The list of available parameters can be accessed via the [EPPO API
-  Documentation](https://data2025.eppo.int/ui/#/docs/GDAPI) platform.
+  Documentation](https://data.eppo.int/ui/#/docs/GDAPI) platform.
 
   By default: no parameters, you need to specify the required ones.
 
