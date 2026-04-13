@@ -20,7 +20,7 @@ By default: all services.}
 
 \item{params}{\code{list} (optional). A named list of query parameters to include
 in the request. The list of available parameters can be accessed via the
-\href{https://data2025.eppo.int/ui/#/docs/GDAPI}{EPPO API Documentation}
+\href{https://data.eppo.int/ui/#/docs/GDAPI}{EPPO API Documentation}
 platform.
 
 By default: default parameters.}
