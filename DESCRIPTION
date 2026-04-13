@@ -34,7 +34,7 @@ License: file LICENSE
 URL: https://openefsa.github.io/eppoFindeR
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Depends:
-    R (>= 4.0.0)
+    R (>= 4.1.0)
 Imports:
     cli (>= 3.6.5),
     httr2 (>= 1.2.1),
