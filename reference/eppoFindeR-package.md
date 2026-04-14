@@ -1,4 +1,4 @@
-# eppoFindeR: R interface to the EPPO Database and Public APIs
+# eppoFindeR: R Interface to the EPPO Database and Public APIs
 
 The eppoFindeR package provides an interface to the public APIs of the
 European and Mediterranean Plant Protection Organization (EPPO)
@@ -10,7 +10,7 @@ wrangling, including the integration of taxonomy with rank information.
 
 Useful links:
 
-- <https://openefsa.github.io/eppoFindeR>
+- <https://openefsa.github.io/eppoFindeR/>
 
 - Report bugs at <https://github.com/openefsa/eppoFindeR/issues>
 
