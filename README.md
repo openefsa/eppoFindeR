@@ -1,4 +1,4 @@
-# eppoFindeR <img src="man/figures/logo.png" height="140" align="right"/>
+# eppoFindeR <img src="https://raw.githubusercontent.com/openefsa/eppoFindeR/main/man/figures/logo.png" height="140" align="right"/>
 
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![codecov](https://codecov.io/gh/openefsa/eppoFindeR/branch/main/graph/badge.svg?token=TR7ETTDG2Z)](https://codecov.io/gh/openefsa/eppoFindeR)
 

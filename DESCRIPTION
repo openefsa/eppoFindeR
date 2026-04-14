@@ -31,7 +31,7 @@ Description: The eppoFindeR package provides an interface to the public APIs
     services and datasets. The package also includes utilities for data 
     wrangling, including the integration of taxonomy with rank information.
 License: file LICENSE
-URL: https://openefsa.github.io/eppoFindeR
+URL: https://openefsa.github.io/eppoFindeR/
 BugReports: https://github.com/openefsa/eppoFindeR/issues
 Depends:
     R (>= 4.1.0)
