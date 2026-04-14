@@ -4,7 +4,7 @@
 \name{eppoFindeR-package}
 \alias{eppoFindeR}
 \alias{eppoFindeR-package}
-\title{eppoFindeR: R interface to the EPPO Database and Public APIs}
+\title{eppoFindeR: R Interface to the EPPO Database and Public APIs}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
@@ -13,7 +13,7 @@ The eppoFindeR package provides an interface to the public APIs of the European 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://openefsa.github.io/eppoFindeR}
+  \item \url{https://openefsa.github.io/eppoFindeR/}
   \item Report bugs at \url{https://github.com/openefsa/eppoFindeR/issues}
 }
 
