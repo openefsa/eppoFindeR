@@ -1,10 +1,12 @@
-# eppoFindeR: R Interface to the EPPO Database and Public APIs
+# eppoFindeR: Interface to the EPPO Database and Public APIs
 
-The eppoFindeR package provides an interface to the public APIs of the
-European and Mediterranean Plant Protection Organization (EPPO)
-database. It enables users to retrieve EPPO data by accessing specific
-services and datasets. The package also includes utilities for data
-wrangling, including the integration of taxonomy with rank information.
+Provides an interface to the public APIs of the European and
+Mediterranean Plant Protection Organization (EPPO) database. It enables
+users to retrieve EPPO data by accessing specific services and datasets.
+The package also includes utilities for data wrangling, including the
+integration of taxonomy with rank information. See
+\<\[https://data.eppo.int/apis/\]https://data.eppo.int/apis/\> for more
+details.
 
 ## See also
 

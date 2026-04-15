@@ -47,7 +47,8 @@ library(eppoFindeR)
 ```
 
 Basic usage examples and full documentation are available in the package
-[vignette](https://openefsa.github.io/eppoFindeR/vignettes/eppoFindeR.Rmd):
+[guide](https://openefsa.github.io/eppoFindeR/articles/eppoFindeR.html)
+or in the package vignettes:
 
 ``` r
 vignette("eppoFindeR")
@@ -60,3 +61,4 @@ vignette("eppoFindeR")
 - **Bug reports:** [Issues on
   GitHub](https://github.com/openefsa/eppoFindeR/issues)  
 - **EPPO Global Database:** <https://gd.eppo.int>
+- **EPPO APIs:** <https://data.eppo.int/apis/>
