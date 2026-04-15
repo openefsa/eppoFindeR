@@ -114,14 +114,15 @@ help("taxon")
 ## Querying a specific category
 
 The *eppoFindeR* package allows you to query all categories available in
-version 2.0 of the EPPO APIs: General, Taxons, Taxon, Country, Tools,
-Reporting Services, and References.
+version 2.0 of the EPPO APIs: General, Taxons, Taxon, Country, RPPO,
+Tools, Reporting Service, and References.
 
 Each category has a corresponding function in the package with the same
 name in *lowerCamelCase* format: general(), taxons(), taxon(),
-country(), tools(), reportingService(), and reportings(). By default,
-these functions return all data available under the selected category,
-but you can customize the query by specifying the desired services.
+country(), rppo(), tools(), reportingService(), and references(). By
+default, these functions return all data available under the selected
+category, but you can customize the query by specifying the desired
+services.
 
 For example, to query all services of the Taxon category for the EPPO
 code “BEMITA”, you can use the following code:
