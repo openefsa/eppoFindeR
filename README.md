@@ -38,7 +38,8 @@ Once installed, load the package as usual:
 library(eppoFindeR)
 ```
 
-Basic usage examples and full documentation are available in the package [vignette](vignettes/eppoFindeR.Rmd):
+Basic usage examples and full documentation are available in the package [guide](https://openefsa.github.io/eppoFindeR/articles/eppoFindeR.html) or in
+the package vignettes:
 
 ```r
 vignette("eppoFindeR")
@@ -49,3 +50,4 @@ vignette("eppoFindeR")
 - **Source code:** [GitHub – openefsa/eppoFindeR](https://github.com/openefsa/eppoFindeR)  
 - **Bug reports:** [Issues on GitHub](https://github.com/openefsa/eppoFindeR/issues)  
 - **EPPO Global Database:** [https://gd.eppo.int](https://gd.eppo.int)
+- **EPPO APIs:** [https://data.eppo.int/apis/](https://data.eppo.int/apis/)
