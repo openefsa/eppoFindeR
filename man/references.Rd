@@ -35,7 +35,7 @@ via REST API. The function sequentially queries all specified \code{services} an
 returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get all information.
 referencesData_ <- references()
 
@@ -44,5 +44,6 @@ referencesData_ <- references(services = c("distributionStatus"))
 
 # Get information about EPPO list codes and labels and countries.
 referencesData_ <- references(services = c("qList", "countries"))
-\dontshow{\}) # examplesIf}
+}
+
 }

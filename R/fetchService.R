@@ -24,15 +24,6 @@
 #'   service.
 #' 
 #' @importFrom checkmate assert_string assert_list
-#' 
-#' @examplesIf FALSE
-#' # Fetch country information about France.
-#' serviceData_ <- .fetchService(
-#'   basePath = "/country",
-#'   code = "FR",
-#'   service = "overview",
-#'   apiKey = "YOUR_API_KEY"
-#' )
 #'
 #' @keywords internal
 #' @noRd

@@ -20,19 +20,6 @@
 #' The purpose of this function is to harmonize the structure of the various
 #' Reference endpoints, ensuring that the final output from `references()` is
 #' consistently formatted and ready for use.
-#' 
-#' @examplesIf FALSE
-#' # ...
-#' referencesData_ <- map(services, ~ .fetchService(
-#'   basePath = "/references",
-#'   apiKey = apiKey,
-#'   service = .x)) |>
-#'   set_names(services)
-#' 
-#' # Rebuild data extracted from the Reference endpoint.
-#' rebuiltReferencesData_ <- .rebuildReferences(
-#'   referencesData = referencesData_)
-#' # ...
 #'
 #' @keywords internal
 #' @noRd

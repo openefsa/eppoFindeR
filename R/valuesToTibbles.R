@@ -9,13 +9,6 @@
 #'
 #' @importFrom checkmate assert_list
 #' @importFrom purrr map
-#'
-#' @examplesIf FALSE
-#' # Transform a list to tibble.
-#' data_ <- .valuesToTibbles(values = list(
-#'  a = list(x = 1:3, y = 4:6),
-#'  b = list(x = 7:9, y = 10:12)
-#' ))
 #' 
 #' @keywords internal
 #' @noRd

@@ -46,7 +46,7 @@ ISO code in \code{isoCodes}, the function sequentially queries all specified
 \code{services} and returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get all information about France.
 countryData_ <- country(isoCodes = c("FR"))
 
@@ -55,5 +55,6 @@ countryData_ <- country(isoCodes = c("FR"), services = c("categorization"))
 
 # Get basic data about France and Italy.
 countryData_ <- country(isoCodes = c("FR", "IT"), services = c("overview"))
-\dontshow{\}) # examplesIf}
+}
+
 }

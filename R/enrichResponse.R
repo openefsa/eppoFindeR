@@ -13,13 +13,6 @@
 #'   queried, and `queried_url`, the URL used for the API request.
 #' 
 #' @importFrom checkmate assert assert_string check_list check_data_frame
-#'
-#' @examplesIf FALSE
-#' data_ <- list(name = "example", value = 123)
-#' 
-#' enrichedData_ <- .enrichResponse(
-#'   responseData = data_,
-#'   url = "https://example.org")
 #' 
 #' @keywords internal
 #' @noRd

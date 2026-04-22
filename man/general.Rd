@@ -29,8 +29,9 @@ REST API. The function sequentially queries all specified \code{services} and
 returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get information about system health status.
 generalData_ <- general()
-\dontshow{\}) # examplesIf}
+}
+
 }

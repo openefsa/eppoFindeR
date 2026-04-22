@@ -30,7 +30,8 @@
 #' @importFrom checkmate assert_vector assert_list assert_string assert
 #' @importFrom purrr map2 set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get the list of reporting service issues.
 #' reportingServiceData_ <- reportingService(
 #'   services = c("list"),
@@ -55,14 +56,10 @@
 #' reportingServiceData_ <- reportingService(
 #'   services = c("reporting", "article"),
 #'   params = list(
-#'     reporting = list(
-#'       reporting_id = 10
-#'     ),
-#'     article = list(
-#'       article_id = 234
-#'     )
-#'   )
-#' )
+#'     reporting = list(reporting_id = 10),
+#'     article = list(article_id = 234)
+#'   ))
+#' }
 #' 
 #' @export
 #' 

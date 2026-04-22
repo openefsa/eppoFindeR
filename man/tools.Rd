@@ -40,13 +40,12 @@ REST API. The function sequentially queries all specified \code{services} and
 returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get the EPPO codes associated to the name Bemisia tabaci.
 toolsData_ <- tools(params = list(
   name2codes = list(
     onlyPreferred = FALSE,
-    name = "Bemisia tabaci"
-  )
-))
-\dontshow{\}) # examplesIf}
+    name = "Bemisia tabaci")))
+}
+
 }

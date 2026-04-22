@@ -16,16 +16,6 @@
 #' @importFrom checkmate assert_list assert_string
 #' @importFrom dplyr mutate relocate
 #' @importFrom purrr imap map
-#'
-#' @examplesIf FALSE
-#' nestedList_ <- list(
-#'   Group1 = list(a = data.frame(x = 1:2), b = data.frame(y = 3:4)),
-#'   Group2 = list(a = data.frame(x = 5:6), b = data.frame(y = 7:8))
-#' )
-#' 
-#' data_ <- .valuesToTibblesBatch(
-#'   nestedValues = nestedList_,
-#'   parentColumnName = "group")
 #' 
 #' @keywords internal
 #' @noRd

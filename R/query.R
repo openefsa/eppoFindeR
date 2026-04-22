@@ -46,13 +46,6 @@
 #' connection issue triggers an informative error.
 #' 
 #' @importFrom checkmate assert_string assert_list
-#'
-#' @examplesIf FALSE
-#' # Get basic information about Bemisia tabaci.
-#' data_ <- .query(endpoint = "/taxon/BEMITA", apiKey = "YOUR_API_KEY")
-#' 
-#' # Get all names about Aphis pomi.
-#' data_ <- .query(endpoint = "/taxon/APHIPO/names", apiKey = "YOUR_API_KEY")
 #' 
 #' @keywords internal
 #' @noRd

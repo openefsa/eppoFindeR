@@ -37,7 +37,8 @@
 #' @importFrom checkmate assert_vector assert_string
 #' @importFrom purrr map set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get all information about Bemisia tabaci.
 #' taxonData_ <- taxon(eppoCodes = c("BEMITA"))
 #' 
@@ -49,6 +50,7 @@
 #' taxonData_ <- taxon(
 #'   eppoCodes = c("BEMITA", "GOSHI"),
 #'   services = c("taxonomy", "categorization"))
+#' }
 #' 
 #' @export
 #' 
