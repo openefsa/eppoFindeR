@@ -14,10 +14,6 @@
 #' 
 #' @importFrom cli cli_abort
 #'
-#' @examplesIf FALSE
-#' .checkServices(c("a", "b"), c("a", "b", "c")) # Valid.
-#' .checkServices(c("a", "x"), c("a", "b", "c")) # Error.
-#'
 #' @keywords internal
 #' @noRd
 #' 

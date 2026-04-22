@@ -22,12 +22,14 @@
 #' @importFrom checkmate assert_data_frame assert_names assert_true
 #' @importFrom tibble tibble
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Retrieve taxonomy data from the EPPO service.
 #' taxonData_ <- taxon(eppoCodes = c("BEMITA"), services = c("taxonomy"))
 #'
 #' # Create a uniform taxonomy with all ranks.
 #' taxonomyData_ <- uniformTaxonomy(taxonomyData = taxonData_$taxonomy)
+#' }
 #' 
 #' @export
 #' 

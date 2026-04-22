@@ -39,7 +39,7 @@ RPPO code in \code{rppoCodes}, the function sequentially queries all specified
 \code{services} and returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get all information about the European and Mediterranean Plant Protection
 # Organisation.
 rppoData_ <- rppo(rppoCodes = c("9A"))
@@ -51,5 +51,6 @@ rppoData_ <- rppo(rppoCodes = c("9A"), services = c("categorization"))
 # Get basic data about European and Mediterranean Plant Protection
 # Organisation and the European Union.
 rppoData_ <- rppo(rppoCodes = c("9A", "9L"), services = c("overview"))
-\dontshow{\}) # examplesIf}
+}
+
 }

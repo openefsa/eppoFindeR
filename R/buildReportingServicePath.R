@@ -21,15 +21,6 @@
 #' 
 #' @importFrom checkmate assert_string assert_list
 #' @importFrom glue glue
-#' 
-#' @examplesIf FALSE
-#' # Fetch reporting data about the article with ID = 10.
-#' reportingServicePath_ <- .buildReportingServicePath(
-#'   service = "article",
-#'   params = list(
-#'     article_id = 10
-#'   )
-#' )
 #'
 #' @keywords internal
 #' @noRd

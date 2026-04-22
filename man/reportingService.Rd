@@ -41,7 +41,7 @@ REST API. The function sequentially queries all specified \code{services} and
 returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get the list of reporting service issues.
 reportingServiceData_ <- reportingService(
   services = c("list"),
@@ -66,13 +66,9 @@ reportingServiceData_ <- reportingService(
 reportingServiceData_ <- reportingService(
   services = c("reporting", "article"),
   params = list(
-    reporting = list(
-      reporting_id = 10
-    ),
-    article = list(
-      article_id = 234
-    )
-  )
-)
-\dontshow{\}) # examplesIf}
+    reporting = list(reporting_id = 10),
+    article = list(article_id = 234)
+  ))
+}
+
 }

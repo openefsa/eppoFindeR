@@ -33,16 +33,6 @@
 #' @importFrom checkmate assert_string assert_vector assert_list
 #' @importFrom httr2 request req_method req_headers req_error resp_status
 #' req_url_query
-#'
-#' @examplesIf FALSE
-#' url_ <- "https://api.eppo.int/gd/v2/taxon/BEMITA"
-#' apiKey_ <- "YOUR_API_KEY"
-#' doNotFailOn_ <- c(200, 400, 401, 403, 404, 429, 500)
-#' 
-#' request_ <- .buildRequest(
-#'   url = url_,
-#'   apiKey = apiKey_,
-#'   doNotFailOn = doNotFailOn_)
 #' 
 #' @keywords internal
 #' @noRd

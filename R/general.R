@@ -22,9 +22,11 @@
 #' @importFrom checkmate assert_vector assert_string
 #' @importFrom purrr map set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get information about system health status.
 #' generalData_ <- general()
+#' }
 #' 
 #' @export
 #' 
