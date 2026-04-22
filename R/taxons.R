@@ -29,7 +29,8 @@
 #' @importFrom checkmate assert_vector assert_list assert_string assert
 #' @importFrom purrr map2 set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get the list of taxons.
 #' taxonsData_ <- taxons()
 #' 
@@ -40,9 +41,8 @@
 #'     limit = 5,
 #'     offset = 1,
 #'     orderAsc = FALSE,
-#'     orderBy = "eppocode"
-#'   )
-#' ))
+#'     orderBy = "eppocode")))
+#' }
 #' 
 #' @export
 #' 

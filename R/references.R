@@ -24,7 +24,8 @@
 #' @importFrom checkmate assert_vector assert_string
 #' @importFrom purrr map set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get all information.
 #' referencesData_ <- references()
 #' 
@@ -33,6 +34,7 @@
 #' 
 #' # Get information about EPPO list codes and labels and countries.
 #' referencesData_ <- references(services = c("qList", "countries"))
+#' }
 #' 
 #' @export
 #' 

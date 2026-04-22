@@ -28,7 +28,8 @@
 #' @importFrom checkmate assert_vector assert_string
 #' @importFrom purrr map set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get all information about the European and Mediterranean Plant Protection
 #' # Organisation.
 #' rppoData_ <- rppo(rppoCodes = c("9A"))
@@ -40,6 +41,7 @@
 #' # Get basic data about European and Mediterranean Plant Protection
 #' # Organisation and the European Union.
 #' rppoData_ <- rppo(rppoCodes = c("9A", "9L"), services = c("overview"))
+#' }
 #' 
 #' @export
 #' 

@@ -35,7 +35,8 @@
 #' @importFrom checkmate assert_vector assert_string
 #' @importFrom purrr map set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get all information about France.
 #' countryData_ <- country(isoCodes = c("FR"))
 #' 
@@ -44,6 +45,7 @@
 #' 
 #' # Get basic data about France and Italy.
 #' countryData_ <- country(isoCodes = c("FR", "IT"), services = c("overview"))
+#' }
 #' 
 #' @export
 #' 

@@ -24,19 +24,6 @@
 #' @importFrom checkmate assert_string
 #' @importFrom glue glue
 #'
-#' @examplesIf FALSE
-#' # Basic endpoint.
-#' endpoint_ <- .buildEndpoint(basePath = "/taxons/list")
-#'
-#' # Endpoint with resource identifier.
-#' endpoint_ <- .buildEndpoint(basePath = "/taxons/taxon", code = "BEMITA")
-#'
-#' # Endpoint with code and service.
-#' endpoint_ <- .buildEndpoint(
-#'   basePath = "/taxons/taxon",
-#'   code = "BEMITA",
-#'   service = "names")
-#'
 #' @keywords internal
 #' @noRd
 #' 

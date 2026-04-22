@@ -50,7 +50,7 @@ EPPO code in \code{eppoCodes}, the function sequentially queries all specified
 \code{services} and returns the extracted data through a list of dataframes.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Get all information about Bemisia tabaci.
 taxonData_ <- taxon(eppoCodes = c("BEMITA"))
 
@@ -62,5 +62,6 @@ taxonData_ <- taxon(eppoCodes = c("BEMITA"), services = c("names"))
 taxonData_ <- taxon(
   eppoCodes = c("BEMITA", "GOSHI"),
   services = c("taxonomy", "categorization"))
-\dontshow{\}) # examplesIf}
+}
+
 }

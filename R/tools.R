@@ -29,14 +29,14 @@
 #' @importFrom checkmate assert_vector assert_list assert_string assert
 #' @importFrom purrr map2 set_names
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # Get the EPPO codes associated to the name Bemisia tabaci.
 #' toolsData_ <- tools(params = list(
 #'   name2codes = list(
 #'     onlyPreferred = FALSE,
-#'     name = "Bemisia tabaci"
-#'   )
-#' ))
+#'     name = "Bemisia tabaci")))
+#' }
 #' 
 #' @export
 #' 

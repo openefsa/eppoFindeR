@@ -15,11 +15,6 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr2 resp_body_string
 #' @importFrom cli cli_abort
-#'
-#' @examplesIf FALSE
-#' response_ <- req_perform(request("https://example.org/"))
-#' 
-#' responseData_ <- .parseResponse(response = response_)
 #' 
 #' @keywords internal
 #' @noRd

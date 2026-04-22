@@ -18,14 +18,6 @@
 #' @importFrom purrr map imap
 #' @importFrom checkmate assert_list
 #' @importFrom dplyr bind_rows relocate
-#'
-#' @examplesIf FALSE
-#' nestedList_ <- list(
-#'   Group1 = list(a = tibble(x = 1:2), b = tibble(y = 3:4)),
-#'   Group2 = list(a = tibble(x = 5:6), b = tibble(y = 7:8))
-#' )
-#' 
-#' groupedData_ <- .groupByServices(datasets = nestedList_)
 #' 
 #' @keywords internal
 #' @noRd

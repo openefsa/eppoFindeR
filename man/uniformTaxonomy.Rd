@@ -29,11 +29,12 @@ since the rank order is fully defined by the internal reference list. The
 column \code{queried_eppo_code} NA values are filled with the right code.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # Retrieve taxonomy data from the EPPO service.
 taxonData_ <- taxon(eppoCodes = c("BEMITA"), services = c("taxonomy"))
 
 # Create a uniform taxonomy with all ranks.
 taxonomyData_ <- uniformTaxonomy(taxonomyData = taxonData_$taxonomy)
-\dontshow{\}) # examplesIf}
+}
+
 }

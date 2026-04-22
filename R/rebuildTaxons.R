@@ -18,11 +18,6 @@
 #' exclusively on that element. It extracts the `queried_on` and `queried_url` 
 #' fields from the raw response, replaces the `data` element with the actual 
 #' content, and then converts it into a tibble using `.valuesToTibbles()`.
-#' 
-#' @examplesIf FALSE
-#' taxonsData_ <- taxons()
-#' 
-#' rebuiltTaxonData_ <- .rebuildTaxons(taxonsData = taxonsData_)
 #'
 #' @keywords internal
 #' @noRd

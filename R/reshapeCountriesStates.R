@@ -15,14 +15,6 @@
 #' @importFrom checkmate assert_list
 #' @importFrom dplyr mutate relocate bind_rows
 #' @importFrom purrr imap
-#' 
-#' @examplesIf FALSE
-#' # rebuildReferences.R.
-#' # ...
-#' if (.y == "countriesStates") {
-#'   .reshapeCountriesStates(countriesStatesData = .x)
-#' }
-#' # ...
 #'
 #' @keywords internal
 #' @noRd
