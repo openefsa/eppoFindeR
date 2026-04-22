@@ -60,7 +60,7 @@ codes.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get all information about Bemisia tabaci.
 taxonData_ <- taxon(eppoCodes = c("BEMITA"))
 
@@ -72,5 +72,5 @@ taxonData_ <- taxon(eppoCodes = c("BEMITA"), services = c("names"))
 taxonData_ <- taxon(
   eppoCodes = c("BEMITA", "GOSHI"),
   services = c("taxonomy", "categorization"))
-}
+} # }
 ```

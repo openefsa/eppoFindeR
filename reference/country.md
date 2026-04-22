@@ -56,7 +56,7 @@ codes.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get all information about France.
 countryData_ <- country(isoCodes = c("FR"))
 
@@ -65,5 +65,5 @@ countryData_ <- country(isoCodes = c("FR"), services = c("categorization"))
 
 # Get basic data about France and Italy.
 countryData_ <- country(isoCodes = c("FR", "IT"), services = c("overview"))
-}
+} # }
 ```

@@ -49,7 +49,7 @@ flattened dataframe with the queried content.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get the list of reporting service issues.
 reportingServiceData_ <- reportingService(
   services = c("list"),
@@ -74,13 +74,8 @@ reportingServiceData_ <- reportingService(
 reportingServiceData_ <- reportingService(
   services = c("reporting", "article"),
   params = list(
-    reporting = list(
-      reporting_id = 10
-    ),
-    article = list(
-      article_id = 234
-    )
-  )
-)
-}
+    reporting = list(reporting_id = 10),
+    article = list(article_id = 234)
+  ))
+} # }
 ```

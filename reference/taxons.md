@@ -50,7 +50,7 @@ flattened dataframe with the queried content.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get the list of taxons.
 taxonsData_ <- taxons()
 
@@ -61,8 +61,6 @@ taxonsData_ <- taxons(params = list(
     limit = 5,
     offset = 1,
     orderAsc = FALSE,
-    orderBy = "eppocode"
-  )
-))
-}
+    orderBy = "eppocode")))
+} # }
 ```

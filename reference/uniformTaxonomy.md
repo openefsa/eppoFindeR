@@ -38,11 +38,11 @@ code.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Retrieve taxonomy data from the EPPO service.
 taxonData_ <- taxon(eppoCodes = c("BEMITA"), services = c("taxonomy"))
 
 # Create a uniform taxonomy with all ranks.
 taxonomyData_ <- uniformTaxonomy(taxonomyData = taxonData_$taxonomy)
-}
+} # }
 ```

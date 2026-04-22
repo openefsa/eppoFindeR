@@ -42,7 +42,7 @@ flattened dataframe with the queried content.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get all information.
 referencesData_ <- references()
 
@@ -51,5 +51,5 @@ referencesData_ <- references(services = c("distributionStatus"))
 
 # Get information about EPPO list codes and labels and countries.
 referencesData_ <- references(services = c("qList", "countries"))
-}
+} # }
 ```

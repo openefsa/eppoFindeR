@@ -49,7 +49,7 @@ codes.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get all information about the European and Mediterranean Plant Protection
 # Organisation.
 rppoData_ <- rppo(rppoCodes = c("9A"))
@@ -61,5 +61,5 @@ rppoData_ <- rppo(rppoCodes = c("9A"), services = c("categorization"))
 # Get basic data about European and Mediterranean Plant Protection
 # Organisation and the European Union.
 rppoData_ <- rppo(rppoCodes = c("9A", "9L"), services = c("overview"))
-}
+} # }
 ```

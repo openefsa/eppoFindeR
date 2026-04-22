@@ -36,8 +36,8 @@ flattened dataframe with the queried content.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get information about system health status.
 generalData_ <- general()
-}
+} # }
 ```

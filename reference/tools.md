@@ -48,13 +48,11 @@ flattened dataframe with the queried content.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # Get the EPPO codes associated to the name Bemisia tabaci.
 toolsData_ <- tools(params = list(
   name2codes = list(
     onlyPreferred = FALSE,
-    name = "Bemisia tabaci"
-  )
-))
-}
+    name = "Bemisia tabaci")))
+} # }
 ```
